@@ -14,13 +14,9 @@ public class MainClass {
 
         System.out.println("Alternati");
         for (int i = 0; i < vettore.length - 1; i++) {
-            try {
-                int alternanza = vettore[i] + vettore[i + 1];
-                vettore[i + 1] = alternanza;
-                System.out.println(vettore[i]);
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
+            int alternanza = vettore[i] + vettore[i + 1];
+            vettore[i + 1] = alternanza;
+            System.out.println(vettore[i]);
         }
 
     }
