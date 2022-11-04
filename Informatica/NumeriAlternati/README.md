@@ -2,6 +2,15 @@ La grandezza del vettore è 10, verrà riempito con una funzione random di java.
 
 <table>
   <tr>
-    <th>sas</th>
+    <th>Nome</th>
+  </tr>
+  <tr>
+    <th>Tipo</th>
+  </tr>
+  <tr>
+    <th>Direzionalità</th>
+  </tr>
+  <tr>
+    <th>Descrizione</th>
   </tr>
 </table>
