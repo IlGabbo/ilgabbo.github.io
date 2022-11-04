@@ -9,14 +9,18 @@
   </tr>
   <tr>
     <td>rand</td>
+    <td>Java Lib</td>
   </tr>
   <tr>
     <td>vettore</td>
+    <td>Intero</td>
   </tr>
   <tr>
     <td>random</td>
+    <td>Intero</td>
   </tr>
   <tr>
     <td>alternanza</td>
+    <td>Intero</td>
   </tr>
 </table>
