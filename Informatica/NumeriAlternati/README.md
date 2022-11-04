@@ -3,14 +3,11 @@ La grandezza del vettore è 10, verrà riempito con una funzione random di java.
 <table>
   <tr>
     <th>Nome</th>
-  </tr>
-  <tr>
     <th>Tipo</th>
-  </tr>
-  <tr>
     <th>Direzionalità</th>
+    <th>Descrizione</th>
   </tr>
   <tr>
-    <th>Descrizione</th>
+  <!-- content -->
   </tr>
 </table>
