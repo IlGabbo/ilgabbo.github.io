@@ -10,17 +10,25 @@
   <tr>
     <td>rand</td>
     <td>Java Lib</td>
+    <td>Lavoro</td>
+    <td>Genera casualmente un numero dispari</td>
   </tr>
   <tr>
     <td>vettore</td>
     <td>Intero</td>
+    <td>Lavoro/Output</td>
+    <td>Riceve i numeri generati e stampa i numeri alternati</td>
   </tr>
   <tr>
     <td>random</td>
     <td>Intero</td>
+    <td>Lavoro</td>
+    <td>Riceve il numero geerato casualmente e esegue un calcolo per renderlo dispari</td>
   </tr>
   <tr>
     <td>alternanza</td>
     <td>Intero</td>
+    <td>Lavoro</td>
+    <td>Prende l'elemento corrente e precedente del vettore, li somma e assegna all'elemento corrente la somma ottenuta</td>
   </tr>
 </table>
