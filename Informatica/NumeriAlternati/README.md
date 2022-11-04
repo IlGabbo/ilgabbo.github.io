@@ -9,8 +9,14 @@
   </tr>
   <tr>
     <td>rand</td>
+  </tr>
+  <tr>
     <td>vettore</td>
+  </tr>
+  <tr>
     <td>random</td>
+  </tr>
+  <tr>
     <td>alternanza</td>
   </tr>
 </table>
