@@ -74,10 +74,10 @@ a {
     text-decoration: None;
     font-weight: 600;
     color: #9332a8;
+    transition: all 0.5s;
 }
 
 a:hover {
-    transition: all 0.5s;
     font-size: 20px;
     color: #efefef;
 }
