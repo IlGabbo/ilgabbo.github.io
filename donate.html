@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/css/donation.css">
+    <title>Donate me</title>
+</head>
+<body>
+    <div id="transition">
+        Thanks!
+    </div>
+    <div class="box">
+        <input type="range" name="amount" id="amount" min="1" max="100" oninput="writeValue()">
+        <input type="number" id="value" placeholder="€51">
+        <button onclick="generatePayment(document.querySelector('#value').placeholder)">Donate</button>
+    </div>
+    <div id="paypal-button-container"></div>
+
+    <script src="https://www.paypal.com/sdk/js?currency=EUR&client-id=AXN3wlzdGVmj0jTCeG2aHoCcWZGXK5stSo_gRz5jX3xMvtDt_fnzfE3p8t8KG8NOALr8YsF3OQ3sRlPa"></script>
+    <script>
+        let p = document.querySelector("#value")
+        function writeValue() {
+            let slide = document.getElementById("amount")
+            console.log(slide.value)
+            p.placeholder = "€" + slide.value
+        }
+
+        function generatePayment(value) {
+            if (value == "") {
+                alert("Inserisci un importo")
+                return
+            }
+
+            paypal.Buttons({
+                createOrder: function(data, actions) {
+                    return actions.order.create({
+                        purchase_units: [{
+                            amount: {
+                                value: value.replace("€", "")
+                            }
+                        }]
+                    })
+                }, 
+                onApprove: function(data, actions) {
+                    return actions.order.capture().then(function(details) {
+                        document.getElementById("transition").style.display = "block"
+                    })
+                }
+            }).render("#paypal-button-container")
+        }
+
+    </script>
+</body>
+</html>
