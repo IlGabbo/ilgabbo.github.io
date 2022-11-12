@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giglo</title>
+    <script src="./static/js/js.js"></script>
+    <link rel="stylesheet" href="static/css/css.css">
+</head>
+<body>
+    <div class="calcoliVari">
+        <div>
+            <input type="text" name="mese" id="mese" placeholder="Inserisci un mese" onchange="getTotDays()">
+            <p id="days">&nbsp;</p>
+        </div>
+        <div>
+            <input type="number" name="voto" id="voto" placeholder="Inserisci il voto" onchange="isOkorNot()">
+            <p id="isOkOrNot">&nbsp;</p>
+        </div>
+        <div>
+            <input type="number" name="datetime" id="ora" placeholder="Inserisci l'ora">
+            <input type="number" name="datetime" id="minuti" placeholder="Inserisci i minuti">
+            <button onclick="HoursAndMinutes()">Calcola</button>
+            <p id="clock">&nbsp;</p>
+        </div>
+        <div>
+            <input type="number" name="gradi" id="gradi" placeholder="Inserisci i gradi in Farenheit" onchange="fromFareToCels()">
+            <p id="celsiusResult">&nbsp;</p>
+        </div>
+        <div>
+            <input type="number" name="orario" id="orario" placeholder="Inserisci l'orario">
+            <input type="number" name="min" id="min" placeholder="Minuti">
+            <button onclick="timeConverter()">Calcola</button>
+            <p id="timeConverted">&nbsp;</p>
+        </div>
+    </div>
+</body>
+</html>
