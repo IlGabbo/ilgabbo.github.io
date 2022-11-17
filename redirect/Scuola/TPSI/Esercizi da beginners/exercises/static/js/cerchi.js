@@ -20,6 +20,7 @@ function setup() {
 
 function Circles(e) {
     e.preventDefault()
+    clear()
     let x = getX()
     let y = getY()
     let diametro = getDiameter()

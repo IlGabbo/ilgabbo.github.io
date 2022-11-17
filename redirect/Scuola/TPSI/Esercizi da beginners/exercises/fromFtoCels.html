@@ -5,16 +5,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Da F to C</title>
-    <script src="./static/js/js.js"></script>
     <link rel="stylesheet" href="static/css/css.css">
 </head>
 <body>
     <div class="calcoliVari">
-        <div>
-            <input type="number" name="gradi" id="gradi" placeholder="Inserisci i gradi in Farenheit">
-            <p id="celsiusResult">&nbsp;</p>
-            <button onclick="fromFareToCels()">Calcola</button>
-        </div>
+        <form id="celsius-convert">
+            <div>
+                <input type="number" name="gradi" id="gradi" placeholder="Inserisci i gradi in Farenheit">
+                <p id="celsiusResult">&nbsp;</p>
+                <button type="submit">Calcola</button>
+            </div>
+        </form>
     </div>
+    <script src="./static/js/fromFtoC.js"></script>
 </body>
 </html>
