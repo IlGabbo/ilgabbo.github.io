@@ -5,83 +5,50 @@
     padding: 0;
     box-sizing: border-box;
     font-family: "Poppins", sans-serif;
-    overflow: hidden;
 }
 
-body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    background: #23242a;
-}
-
-.box {
-    position: relative;
-    width: 29.8%;
-    min-height: 63vh;
-    background-color: #1c1c1c;
-    border-radius: 8px;
-}
-
-.box::before {
-    content: "";
-    position: absolute;
-    top: -50%;
-    left: -50%;
+.menu {
     width: 100%;
-    height: 63vh;
-    background: linear-gradient(0deg, transparent, #9332a8, #401f47);
-    transform-origin: bottom right;
-    animation: animate 6s linear infinite;
+    height: 20vh;
+    background: rgb(2, 255, 2);
 }
 
-.box::after {
-    content: "";
-    position: absolute;
-    top: -50%;
-    left: -50%;
-    width: 100%;
-    height: 63vh;
-    background: linear-gradient(0deg, transparent, #9332a8, #401f47);
-    transform-origin: bottom right;
-    animation: animate 6s linear infinite;
-    animation-delay: -3s;
+.menu ul li {
+    display: inline-block;
+    text-align: center;
 }
 
-@keyframes animate {
-    0% {
-        transform: rotate(0deg);
-    }
-
-    100% {
-        transform: rotate(360deg);
-    }
-}
-
-.form {
-    position: absolute;
-    inset: 2px;
-    border-radius: 8px;
-    background-color: #28292d;
-    z-index: 10;
-    padding: 13% 10%;
+ul {
+    padding: 10px 20px;
     display: flex;
-    flex-direction: column;
+    justify-content: flex-end;
+    padding-top: 3.6%;
 }
 
 a {
-    text-decoration: None;
-    font-weight: 600;
-    color: #9332a8;
-    transition: all 0.5s;
+    color: #fff;
+    text-decoration: none;
+    margin-right: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    transition: all 0.2s;
 }
 
 a:hover {
-    font-size: 20px;
-    color: #efefef;
+    color: black;
+    background-color: #fff;
+    text-align: center;
 }
 
+.about {
+    display: none;
+    width: 15%;
+    background-color: #797979;
+    border: 2px solid rgb(24, 24, 24);
+    border-radius: 5px;
+    transition: all 2s;
+}
 
-
-
+.about-me {
+    display: block;
+}
