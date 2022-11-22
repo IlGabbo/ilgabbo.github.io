@@ -37,10 +37,11 @@ li {
     margin-right: 10px;
     padding: 10px;
     border-radius: 5px;
-    transition: all 0.2s;
+    transition: all 0.5s;
 }
 
 .options a:hover {
+    font-size: 20px;
     color: black;
     background-color: #fff;
     text-align: center;
