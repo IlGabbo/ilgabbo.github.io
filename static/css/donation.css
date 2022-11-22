@@ -135,7 +135,7 @@ input[type=range] {
     color: #efefef;
     font-weight: 600;
     background-color: #23242a;
-    width: 50px;
+    width: 65px;
     font-size: 20px;
     border: none;
     outline: none;
@@ -182,3 +182,14 @@ button:hover {
     display: none
 }
 
+#paypal-button-container {
+    width: 30%;
+    display: block;
+    margin: auto;
+    background-color: #efefef;
+    z-index: 11;
+}
+
+iframe {
+    width: 100%;
+}
