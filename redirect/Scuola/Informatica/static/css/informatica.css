@@ -73,11 +73,22 @@ li {
     left: 0;
 }
 
-.logo img {
-    border-radius: 100px;
-    width: 70%;
-    border: 2px solid rgb(133, 133, 133);
+form {
+    margin-left: 30%;
 }
+
+button {
+    border-radius: 100px;   
+    background-color: transparent;
+    border: none;
+}
+
+button img {
+    width: 65%;
+    border-radius: 100px;
+    border: 2px solid #d6d4d4;
+}
+
 
 .exercises {
     width: 20%;
