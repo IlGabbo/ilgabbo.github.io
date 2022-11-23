@@ -92,7 +92,7 @@ button {
 }
 
 button img {
-    width: 65%;
+    width: 4.5vw;
     border-radius: 100px;
     border: 2px solid #d6d4d4;
 }
@@ -111,16 +111,16 @@ h1 {
 }
 
 .notification::after {
-    content: "0";
+    content: attr(data);
     border-radius: 10px;
-    width: 2%;
-    height: 2.2vh;
+    width: 0.8vw;
+    height: 1.5vh;
     background-color: red;
     position: absolute;
     top: 0;
     right: 0;
     text-align: center;
-    font-size: 0.8vw;
+    font-size: 0.5vw;
     color: #fff;
 }
 
@@ -135,7 +135,7 @@ h1 {
     transition: width 2s;
 }
 
-#window-notification {
+.window-notification {
     display: none;
     flex-direction: column;
     background-color: rgb(92, 92, 92);
@@ -146,7 +146,7 @@ h1 {
     justify-content: center;
 }
 
-#window-notification p {
+.window-notification p {
     margin-top: 3px;
     color: #fff;
     text-align: center;
@@ -175,4 +175,16 @@ h1 {
 span {
     display: block;
     font-size: 0.6vw;
+}
+
+.showHide-window-notification {
+    display: flex;
+}
+
+.centered-window-notification {
+    position: fixed;
+    display: block;
+    width: 200px;
+    top: 0;
+    left: 0;
 }

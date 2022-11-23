@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="static/css/Home.css">
+    <link rel="stylesheet" href="static/css/Query.css">
     <title>Home</title>
 </head>
 <body>
@@ -20,6 +21,11 @@
             <a href="#" onclick="notification()">
                 <img src="./static/css/bell.svg" alt="notification">
             </a>
+        </div>
+        <div class="hamburger" id="hamburger" onclick="showMenu()">
+            <div>&nbsp;</div>
+            <div>&nbsp;</div>
+            <div>&nbsp;</div>
         </div>
         <div class="options">
             <ul>
@@ -51,25 +57,7 @@
             </ul>
         </div>
     </div>
-    <h1>
-        Sei nella Home
-    </h1>
     <div>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione tempore corporis cum blanditiis beatae repellat nemo molestias ipsa, ex libero. Reiciendis soluta exercitationem architecto unde consequuntur distinctio. Debitis, hic dolor.
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione tempore corporis cum blanditiis beatae repellat nemo molestias ipsa, ex libero. Reiciendis soluta exercitationem architecto unde consequuntur distinctio. Debitis, hic dolor.
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione tempore corporis cum blanditiis beatae repellat nemo molestias ipsa, ex libero. Reiciendis soluta exercitationem architecto unde consequuntur distinctio. Debitis, hic dolor.
-        <var> Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione tempore corporis cum blanditiis beatae repellat nemo molestias ipsa, ex libero. Reiciendis soluta exercitationem architecto unde consequuntur distinctio. Debitis, hic dolor.
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione tempore corporis cum blanditiis beatae repellat nemo molestias ipsa, ex libero. Reiciendis soluta exercitationem architecto unde consequuntur distinctio. Debitis, hic dolor.
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione tempore corporis cum blanditiis beatae repellat nemo molestias ipsa, ex libero. Reiciendis soluta exercitationem architecto unde consequuntur distinctio. Debitis, hic dolor.
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione tempore corporis cum blanditiis beatae repellat nemo molestias ipsa, ex libero. Reiciendis soluta exercitationem architecto unde consequuntur distinctio. Debitis, hic dolor.
-            <var> Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione tempore corporis cum blanditiis beatae repellat nemo molestias ipsa, ex libero. Reiciendis soluta exercitationem architecto unde consequuntur distinctio. Debitis, hic dolor.
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione tempore corporis cum blanditiis beatae repellat nemo molestias ipsa, ex libero. Reiciendis soluta exercitationem architecto unde consequuntur distinctio. Debitis, hic dolor.
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione tempore corporis cum blanditiis beatae repellat nemo molestias ipsa, ex libero. Reiciendis soluta exercitationem architecto unde consequuntur distinctio. Debitis, hic dolor.
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione tempore corporis cum blanditiis beatae repellat nemo molestias ipsa, ex libero. Reiciendis soluta exercitationem architecto unde consequuntur distinctio. Debitis, hic dolor.
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione tempore corporis cum blanditiis beatae repellat nemo molestias ipsa, ex libero. Reiciendis soluta exercitationem architecto unde consequuntur distinctio. Debitis, hic dolor.
-                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione tempore corporis cum blanditiis beatae repellat nemo molestias ipsa, ex libero. Reiciendis soluta exercitationem architecto unde consequuntur distinctio. Debitis, hic dolor.
-            </var>
-        </var>
     </div>
 
     <div class="about">
@@ -82,7 +70,7 @@
         <a href="http://stogabbo.ddns.net" style="color: #fff;">Il mio sito</a>
     </div>
 
-    <div id="window-notification">
+    <div id="window-notification" class="window-notification">
         <p>
             Message Box
         </p>
