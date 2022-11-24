@@ -1,0 +1,64 @@
+@media screen and (max-width: 1200px) {
+    .options {
+        display: flex;
+        flex-direction: column;
+        text-align: right;
+        position: absolute;
+        top: 10vh;
+        right: -100%;
+        border-radius: 5px;
+        transition: all 0.5s;
+    }
+
+    .options a {
+        padding-bottom: 10%;
+    }
+
+    .toggle-menu {
+        right: 0;
+    }
+
+    #image {
+        display: none;
+    }
+
+    .hamburger {
+        display: block;
+        width: 20px;
+        margin-right: 3%;
+    }
+
+    .hamburger a {
+        text-decoration: none;
+    }
+
+    .hamburger a p {
+        color: #fff;
+        background-color: #fff;
+        height: 2px;
+        width: 100%;
+        margin: 5px;
+    }
+
+    #notifications::after {
+        width: 12px;
+        height: 12px;
+        text-align: center;
+        font-size: 10px;
+    }
+
+    #message-box {
+        width: 200px;
+
+    }
+
+    #title {
+        font-size: 24px;
+    }
+
+    .Lorem {
+        font-size: 20px;
+    }
+}
+
+    

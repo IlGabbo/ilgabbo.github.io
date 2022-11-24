@@ -12,12 +12,19 @@ notify.setAttribute("index", "1")
 notify.addEventListener("click", function(e) {
     e.preventDefault()
     if (isBoxOpened == false) {
-        const {clientX: X, clientY: Y} = e
         notify.setAttribute("index", "0")
         notificationBox.style.display = "flex"
         notificationBox.style.position = "fixed"
-        notificationBox.style.top = Y + 15 + "px"
-        notificationBox.style.left = X + "px"
+        if (window.innerWidth > 1200) {
+            console.log(window.innerWidth)
+            const {clientX: X, clientY: Y} = e
+            notificationBox.style.top = Y + 15 + "px"
+            notificationBox.style.left = X + "px"
+        } else {
+            console.log(window.innerWidth)
+            notificationBox.style.bottom = "0"
+            notificationBox.style.right = "0"
+        }
         isBoxOpened = true
     } else {
         notificationBox.style.display = "none"
@@ -40,9 +47,9 @@ window.addEventListener("scroll",
         menu.style.transition = "all 0.2s"
     })
 
-document.querySelector("#image").addEventListener("mousemove", 
+if (window.innerWidth > 1200) {
+    document.querySelector("#image").addEventListener("mousemove", 
     function(e) {
-        hasAlreadyVisited = true
         title.style.top = "5px"
         image.style.width = "4%"
         image.style.height = "8vh"
@@ -60,3 +67,26 @@ document.querySelector("#image").addEventListener("mousemove",
         title.style.transition = "all 1.5s"
 
     })
+} else {
+    title.style.top = "25px"
+    image.style.width = "4%"
+    image.style.height = "8vh"
+    image.style.borderRadius = "100px"
+    image.style.border = "2px solid #fff"
+    image.style.backgroundPosition = "center"
+    image.style.top = "10px"
+    image.style.left = "20px"
+    menu.style.left = "0px"
+    content.style.left = "25%"
+    document.querySelector("body").style.overflow = "visible"
+    image.style.transition = "all 1.5s"
+    menu.style.transition = "all 1.5s"
+    content.style.transition = "all 2.3s"
+    title.style.transition = "all 1.5s"
+}
+
+document.querySelector(".hamburger a").addEventListener("click", function(e){
+    e.preventDefault()
+    document.querySelector(".options").classList.toggle("toggle-menu")
+})
+
