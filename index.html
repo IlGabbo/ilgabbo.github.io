@@ -4,83 +4,38 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="static/css/Home.css">
-    <link rel="stylesheet" href="static/css/Query.css">
+    <link rel="stylesheet" href="./static/css/Home.css">
     <title>Home</title>
 </head>
 <body>
-    <div class="menu">
-        <div class="logo">
-            <form action="https://github.com/IlGabbo" method="post">
-                <button type="submit">
-                    <img src="https://avatars.githubusercontent.com/u/96393534?v=4" alt="MyLogo">           
-                </button>
-            </form> 
-        </div>
-        <div class="notification" id="notification">
-            <a href="#" onclick="notification()">
-                <img src="./static/css/bell.svg" alt="notification">
-            </a>
-        </div>
-        <div class="hamburger" id="hamburger" onclick="showMenu()">
-            <div>&nbsp;</div>
-            <div>&nbsp;</div>
-            <div>&nbsp;</div>
+    <div class="context-menu shadow-in" id="context-menu">
+        <div id="image" class="image">&nbsp;</div>
+        <div id="notifications">
+            <img src="./static/images/bell.png" alt="bell">
         </div>
         <div class="options">
-            <ul>
-                <li>
-                    <p>
-                        <a href="index.html">HOME</a>
-                    </p>
-                </li>
-                <li>
-                    <p>
-                        <a href="#" id="about-me" onclick="showAbout()">ABOUT</a>
-                    </p>
-                </li>
-                <li>
-                    <p>
-                        <a href="./redirect/Scuola/scuola.html">EXERCISES</a>
-                    </p>
-                </li>
-                <li>
-                    <p>
-                        <a href="./redirect/geolocation/index.html">GEOLOCATION</a>
-                    </p>
-                </li>
-                <li>
-                    <p>
-                        <a href="./donate.html">DONATIONS</a>
-                    </p>
-                </li>
-            </ul>
+            <a href="./index.html">Home</a>
+            <a href="#">About</a>
+            <a href="./redirect/Scuola/index.html">Exercises</a>
+            <a href="./redirect/geolocation/index.html">Geolocation</a>
+            <a href="./donate.html">Donations</a>
         </div>
     </div>
-    <div>
+    <div class="title">
+        <h1 id="title">HOMEPAGE</h1>
     </div>
-
-    <div class="about">
-        <p>
-            Mancini Gabriele
-        </p>
-        <p>
-            4 ITIA/C
-        </p>
-        <a href="http://stogabbo.ddns.net" style="color: #fff;">Il mio sito</a>
-    </div>
-
-    <div id="window-notification" class="window-notification">
-        <p>
-            Message Box
-        </p>
-        <div class="message-box">
-            <p>Design rivisto
-                <span>At 11:00, 23/11/22</span>
-            </p>
+    <div class="content" id="content">
+        <div class="Lorem" id="Lorem">
+            Sei nella homepage
         </div>
     </div>
-    
+    <div id="message-box">
+        <p>Message Box</p>
+        <div id="message-content-box">
+            <p class="nothing">Vuoto</p>
+        </div>
+    </div>
+    <audio autoplay id="audio" style="display: none;" src="./static/js/ph-intro.mp3"></audio>
     <script src="./static/js/js.js"></script>
 </body>
 </html>
