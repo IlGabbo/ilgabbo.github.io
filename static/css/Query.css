@@ -81,6 +81,7 @@
     .about {
         width: 150px;
         z-index: 12;
+        position: fixed;
         -webkit-box-shadow: 5px 5px 15px 5px #000; 
         box-shadow: 5px 5px 15px 5px #000000;
     }

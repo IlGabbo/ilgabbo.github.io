@@ -183,6 +183,7 @@ body {
 
 .show-about-me {
     display: block;
+    position: fixed;
     z-index: 12;
 }
 
