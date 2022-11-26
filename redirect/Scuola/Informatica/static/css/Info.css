@@ -137,7 +137,7 @@ body {
     font-family: "Nebula";
     color: rgb(175, 175, 175);
     position: fixed;
-    top: 0%;
+    top: 13px;
     z-index: 12;
     margin-top: 15px;
     transition: all 5s;

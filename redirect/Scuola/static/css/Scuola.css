@@ -9,6 +9,10 @@
     padding: 0;
 }
 
+.hamburger {
+    display: none;
+}
+
 body {
     background-color: rgb(37, 37, 37);
     overflow: hidden;
@@ -133,7 +137,7 @@ body {
     font-family: "Nebula";
     color: rgb(175, 175, 175);
     position: fixed;
-    top: 0%;
+    top: 13px;
     z-index: 12;
     transition: all 5s;
     margin-top: 15px;

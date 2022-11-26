@@ -53,7 +53,7 @@ window.addEventListener("scroll",
 
 document.querySelector("#image").addEventListener("mousemove", 
 function(e) {
-    title.style.top = "0.8vh"
+    title.style.top = "0.9vh"
     image.style.width = "60px"
     image.style.height = "60px"
     image.style.borderRadius = "100px"
@@ -78,7 +78,7 @@ document.querySelector(".hamburger a").addEventListener("click", function(e){
 
 function showAboutMe() {
     let about_window = document.getElementById("about")
-    if (window.screenX > 1300) {
+    if (window.innerWidth > 1300) {
         let e = window.event
         const {clientX: X, clientY: Y} = e
         e.preventDefault()

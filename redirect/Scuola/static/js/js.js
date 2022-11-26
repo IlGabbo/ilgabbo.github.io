@@ -58,7 +58,7 @@ document.querySelector(".hamburger a").addEventListener("click", function(e){
 
 function showAboutMe() {
     let about_window = document.getElementById("about")
-    if (window.screenX > 1300) {
+    if (window.innerWidth > 1300) {
         let e = window.event
         const {clientX: X, clientY: Y} = e
         e.preventDefault()
