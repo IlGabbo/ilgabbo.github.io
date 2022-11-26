@@ -43,6 +43,12 @@
     #notifications {
         left: -3%;
         margin-left: 20px;
+        width: 25px;
+        height: 25px;
+    }
+
+    #notifications img {
+        width: 25px;
     }
 
     #notifications::after {

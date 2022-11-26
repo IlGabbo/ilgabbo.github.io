@@ -23,21 +23,21 @@ body {
     justify-content: right;
     align-items: center;
     width: 100%;
-    height: 10vh;
+    height: 80px;
     position: fixed;
     top: 0;
-    left: -100%;
+    left: -37%;
     transition: all 0.3s;
     z-index: 10;
 }
 
 .options {
-    padding: 20px;
+    padding: 2%;
 }
 
 .options a {
     text-decoration: none;
-    padding: 0px 20px;
+    margin: 0 10px;
     font-family: "Titillium Web";
     font-weight: 600;
     color: #00FFC3;
@@ -46,8 +46,10 @@ body {
 #image {
     width: 100%;
     height: 100vh;
-    background-image: url(../images/light-bulb-in-the-dark.jpg);
+    background-image: url(../images/venom.jpg);
     background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
     position: fixed;
     top: 0;
     left: 0;
@@ -57,39 +59,49 @@ body {
 .content {
     width: 100%;
     color: #fff;
-    margin-top: 15%;
-    position: relative;
+    margin-top: 10%;
 }
 
 .Lorem {
     font-family: "Nebula";
     font-size: 3vw;
-    width: 50%;
+    width: 60%;
     position: absolute;
     left: -100%;
     z-index: 4;
     text-align: center;
 }
 
+.Lorem p {
+    font-family: "Titillium Web";
+    text-align: left;
+    font-size: 17px;
+}
+
+.Lorem h3 {
+    text-align: left;
+}
+
 #notifications img {
-    width: 2vw;
+    width: 20px;
 }
 
 #notifications {
-    width: 2vw;
+    width: 20px;
     position: relative;
+    left: -35%;
 }
 
 #notifications::after {
     content: attr(index);
     border-radius: 10px;
     width: 50%;
-    height: auto;
+    height: 50%;
     background-color: red;
     position: absolute;
     top: 0;
     right: 0;
-    font-size: 0.9vw;
+    font-size: 70%;
     color: #fff;
     text-align: center;
 }
@@ -99,7 +111,7 @@ body {
     height: 25vh;
     border: 2px solid #22c09b;
     background-color: rgb(37, 37, 37);
-    z-index: 11;
+    z-index: 12;
     border-radius: 5px;
     display: none;
     justify-content: center;
@@ -124,14 +136,14 @@ body {
 
 .title {
     width: 100%;
-    height: 10vh;
+    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 .title h1 {
-    font-size: 3vw;
+    font-size: 60px;
     font-family: "Nebula";
     color: rgb(175, 175, 175);
     position: fixed;
@@ -148,6 +160,38 @@ body {
     -webkit-box-shadow: 5px 5px 5px 0px #00FFC3, inset 4px 4px 15px 0px #00FFC3, 5px 5px 47px 16px rgba(0,0,0,0); 
     box-shadow: 5px 5px 5px 0px #00FFC3, inset 4px 4px 15px 0px #00FFC3, 5px 5px 47px 16px rgba(0,0,0,0);
 }
+
+.about {
+    display: none;
+    border: 2px solid #00FFC3;
+    border-radius: 5px;
+    color: #fff;
+    font-family: "Nebula";
+    width: 15%;
+    height: 150px;
+    position: absolute;
+    background-color: #333333;
+}
+
+.about p {
+    margin: 5px 0px 0px 10px;
+}
+
+.show-about-me {
+    display: block;
+    z-index: 12;
+}
+
+.content-box {
+    width: 50%;
+    position: absolute;
+    top: 100%;
+    left: 25%;
+    z-index: 5;
+    background-color: rgb(37, 37, 37);
+}
+
+
 
 /* ---------------------------------- ScrollBar ---------------------------------- */
 
@@ -193,6 +237,6 @@ body {
     color: #22c09b;
 }
 
-#image:hover {
-    background-color: #fff;
+.seller-box:hover{
+    background-color: #00ffc349;
 }
