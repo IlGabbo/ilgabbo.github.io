@@ -74,11 +74,11 @@ body {
 }
 
 #notifications img {
-    width: 2vw;
+    width: 1.5vw;
 }
 
 #notifications {
-    width: 2vw;
+    width: 1.5vw;
     position: relative;
 }
 
@@ -137,7 +137,7 @@ body {
     font-family: "Nebula";
     color: rgb(175, 175, 175);
     position: fixed;
-    top: 13px;
+    top: -1vh;
     z-index: 12;
     margin-top: 15px;
     transition: all 5s;

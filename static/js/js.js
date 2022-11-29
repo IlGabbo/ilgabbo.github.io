@@ -53,7 +53,7 @@ window.addEventListener("scroll",
 
 document.querySelector("#image").addEventListener("mousemove", 
 function(e) {
-    title.style.top = "0.9vh"
+    title.style.top = "0.4vh"
     image.style.width = "60px"
     image.style.height = "60px"
     image.style.borderRadius = "100px"
