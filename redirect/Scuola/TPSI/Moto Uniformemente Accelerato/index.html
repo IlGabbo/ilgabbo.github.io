@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Moto Uniformemente Accelerato</title>
+		<style>
+			body {
+				background-color: green;
+			}
+
+			label {
+				color: #fff;
+			}
+
+			form {
+				display: flex;
+			}
+		</style>
+	</head>
+	<body>
+		<form action="#">
+			<div>
+				<input type="range" name="accelerationX" id="accelerationX" value="0" min="-1" max="1" step="0.01"/>
+				<label for="LabelAccelerationX" id="X">X</label>
+			</div>
+			<div>
+				<input type="range" name="accelerationY" id="accelerationY" value="0" min="-1" max="1" step="0.01"/>
+				<label for="accelerationY" id="Y">Y</label>
+			</div>
+		</form>
+
+		<script src="./static/js/Libs/p5.js"></script>
+		<script src="./static/js/js.js"></script>
+	</body>
+</html>
