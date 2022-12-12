@@ -38,21 +38,18 @@ window.addEventListener("scroll",
         content_box.style.top = "70%"
         content_box.style.transition = "all 0.8s"
         if (this.scrollY > 20) {
-            //menu.classList.add("shadow-in")
             menu.style.backgroundColor = "#000"
             title.style.color = "#fff"
-            
         } else {
-            //menu.classList.remove("shadow-in")
             menu.style.backgroundColor = "transparent"
             title.style.color = "#AFAFAF"
-
         }
         menu.style.transition = "all 0.2s"
     })
 
 document.querySelector("#image").addEventListener("mousemove", 
 function(e) {
+    document.querySelector("body").style.backgroundColor = "rgb(37, 37, 37)"
     title.style.top = "0.4vh"
     image.style.width = "60px"
     image.style.height = "60px"
