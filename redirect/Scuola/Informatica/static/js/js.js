@@ -9,29 +9,6 @@ let isBoxOpened = false
 
 
 
-notify.setAttribute("index", "0")
-notify.addEventListener("click", function(e) {
-    e.preventDefault()
-    if (isBoxOpened == false) {
-        notify.setAttribute("index", "0")
-        notificationBox.style.display = "flex"
-        notificationBox.style.position = "fixed"
-        if (window.innerWidth > 1300) {
-            console.log(window.innerWidth)
-            const {clientX: X, clientY: Y} = e
-            notificationBox.style.top = Y + 15 + "px"
-            notificationBox.style.left = X + "px"
-        } else {
-            console.log(window.innerWidth)
-            notificationBox.style.bottom = "0"
-            notificationBox.style.right = "0"
-        }
-        isBoxOpened = true
-    } else {
-        notificationBox.style.display = "none"
-        isBoxOpened = false
-    }
-})
 
 window.addEventListener("scroll",
     function(e) {

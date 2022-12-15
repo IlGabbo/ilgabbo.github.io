@@ -20,13 +20,14 @@ body {
 
 .context-menu {
     display: flex;
+    background-color: rgb(37, 37, 37);
     justify-content: right;
     align-items: center;
     width: 100%;
     height: 80px;
     position: fixed;
     top: 0;
-    left: 0%;
+    left: 0;
     transition: all 0.3s;
     z-index: 10;
 }
@@ -54,6 +55,7 @@ body {
 .Lorem {
     width: 100%;
     text-align: center;
+    z-index: 5;
 }
 
 .Lorem div a {
@@ -74,24 +76,25 @@ body {
 }
 
 #notifications img {
-    width: 1.5vw;
+    width: 20px;
 }
 
 #notifications {
-    width: 1.5vw;
+    width: 20px;
     position: relative;
+    /*left: -35%;*/
 }
 
 #notifications::after {
     content: attr(index);
     border-radius: 10px;
     width: 50%;
-    height: auto;
+    height: 50%;
     background-color: red;
     position: absolute;
     top: 0;
     right: 0;
-    font-size: 0.9vw;
+    font-size: 70%;
     color: #fff;
     text-align: center;
 }
@@ -126,21 +129,20 @@ body {
 
 .title {
     width: 100%;
-    height: 10vh;
+    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 .title h1 {
-    font-size: 3vw;
+    font-size: 60px;
     font-family: "Nebula";
     color: rgb(175, 175, 175);
     position: fixed;
-    top: -1vh;
+    top: 0.4vh;
     z-index: 12;
     transition: all 5s;
-    margin-top: 15px;
 }
 
 .nothing {
