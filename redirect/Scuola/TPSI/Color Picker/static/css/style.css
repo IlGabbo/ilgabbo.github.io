@@ -9,10 +9,12 @@ body {
 }
 
 h1 {
-    font-size: 78px;
+    width: 100%;
+    font-size: 8vh;
 } 
 
 p {
+    width: 100%;
     font-size: 22px;
     letter-spacing: 30%;
     margin-top: 25px;
@@ -29,12 +31,13 @@ span {
     display: none;
 }
 
-.guide {
+.class {
     width: 100%;
+    text-align: center;
 }
 
 .centered-box {
-    width: 43%;
+    width: 100%;
     position: absolute;
     top: 50%;
     left: 50%;
