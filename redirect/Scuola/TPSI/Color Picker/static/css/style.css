@@ -67,8 +67,8 @@ span {
     border-radius: 10px;
 }
 
-.show-border {
-    border: 3px solid black;
+.reset-border {
+    border: 1px solid black;
 }
 
 .red {
