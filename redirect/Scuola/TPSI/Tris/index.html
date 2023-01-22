@@ -5,37 +5,65 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./static/css/tris.css">
-    <title>Document</title>
+    <title>Tic Tac Toe</title>
 </head>
-<body>
-    <audio controls autoplay>
-        <source src="./static/audio/" type="audio/mpeg">
-    </audio>
-    <div class="container">        
-        <div class="title"></div>
-        <div class="buttons">
-            <button>Player vs Player</button>
-            <button>Play with bot</button>
-        </div>    
-    </div>
-    <div class="game">
-        <table>
-            <tr>
-                <th></th>
-                <th></th>
-                <th></th>
-            </tr>
-            <tr>
-                <th></th>
-                <th></th>
-                <th></th>
-            </tr>
-            <tr>
-                <th></th>
-                <th></th>
-                <th></th>
-            </tr>
-        </table>
-    </div>   
+<body> 
+    <div class="width-414">
+        <div class="settings">
+            <div class="gear icon" onclick="showHideSettings()"></div>
+        </div> 
+        <div class="settings-container" id="settings-window">
+            <div class="settings-box">
+                <div class="volume-settings">
+                    <div class="volume-icon icon" id="volume-icon"></div>
+                </div>
+                <div class="volume">
+                    <input type="range" name="volume" id="volume" min="0" max="100" value="50">
+                    <p id="volume-status">Volume: 50</p>
+                </div>
+                <div class="social">
+                    <div class="github social-icon" onclick="window.open('https://github.com/IlGabbo')"></div>
+                    <div class="discord social-icon" onclick="window.open('https://discord.com/channels/424934230351544330')"></div>
+                </div>
+            </div>            
+        </div>     
+        <div class="status" id="status">
+            <div class="winner">
+                Winner
+            </div>
+            <div>
+                <button onclick="document.querySelector('#status').style.display = 'none'; resetGame()">Close</button>
+            </div>
+        </div>
+        <div class="container">        
+            <div class="title"></div>
+            <div class="buttons">
+                <button onclick="document.getElementById('game').style.display = 'flex'">Player vs Player</button>
+                <button>Play with bot</button>
+            </div>    
+        </div>
+        <div class="game" style="display: none;" id="game">
+            <table>
+                <tr row=0>
+                    <th cell=0></th>
+                    <th cell=1></th>
+                    <th cell=2></th>
+                </tr>
+                <tr row=1>
+                    <th cell=0></th>
+                    <th cell=1></th>
+                    <th cell=2></th>
+                </tr>
+                <tr row=2>
+                    <th cell=0></th>
+                    <th cell=1></th>
+                    <th cell=2></th>
+                </tr>
+            </table>
+            <button id="reset">Reset</button>
+            <button id="home">Home</button>
+        </div>   
+    </div>    
+    <script src="./static/js/js.js"></script>
 </body>
 </html>

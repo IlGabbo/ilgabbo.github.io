@@ -9,6 +9,15 @@
     font-family: "Minecraft", sans-serif;
 }
 
+.width-414 {
+    width: 414px;
+    height: 100vh;
+    background-image: url(../images/background/background.jpg);
+    background-size: cover;
+    position: relative;
+    overflow-x: hidden;
+}
+
 .title {
     width: 90%;
     height: 80px;
@@ -19,11 +28,12 @@
 
 .container {
     width: 100%;
-    height: 100vh;
+    height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    overflow: hidden;
 }
 
 .buttons {
@@ -47,21 +57,160 @@
     background-size: cover;
     display: flex;
     justify-content: center;
+    flex-direction: column;
     align-items: center;
 }
 
+#reset {
+    background-color: rgba(255, 0, 0, 0.7);
+    margin-top: 15px;
+}
+
+#home {
+    background-color: rgba(0, 0, 255, 0.7);
+}
+
+.settings {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 99;
+}
+
+.icon {
+    width: 30px;
+    height: 30px;
+    background-size: cover;
+}
+
+.settings-box {
+    width: 50%;
+    height: 300px;
+    border: 3px solid #000;
+    text-align: center;
+    background-image: url(../images/background/grass.jpg);
+    background-size: cover;
+    -webkit-box-shadow: 0px 0px 14px 1px #000000; 
+    box-shadow: 0px 0px 14px 1px #000000;
+    position: relative;
+}
+
+.settings-container {
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 95;
+}
+
+.volume-settings {
+    display: flex;
+    justify-content: center;
+}
+
+.gear {
+    background-image: url(../images/icon/gear.svg);
+}
+
+.volume-icon {
+    background-image: url(../images/icon/volume-mute.svg);
+    border: 2px solid #fff;
+    border-radius: 5px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+#volume-status {
+    color: #fff;
+    font-weight: 300;
+}
+
+.show-hide {
+    display: flex;
+}
+
+.status {
+    width: 50%;
+    height: 100px;
+    border: 2px solid rgb(202, 202, 202);
+    background-image: url(../images/background/dirt.jpg);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    -webkit-box-shadow: 0px 0px 14px 1px #000000; 
+    box-shadow: 0px 0px 14px 1px #000000;
+    color: #fff;
+    z-index: 90;
+}
+
+.status div:first-child {
+    width: 100%;
+    text-align: center;
+}
+
+.status div:last-child {
+    width: 50%;
+}
+
+.status div button {
+    width: 100%;
+    height: 30px;
+    background-color: rgba(0, 0, 255, 0.9);
+}
+
+.social {
+    width: 90%;
+    height: 40px;
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.social-icon {
+    width: 30px;
+    height: 30px;
+    background-size: cover;
+}
+
+.github {
+    background-image: url(../images/social/github.svg);
+}
+
+.discord {
+    background-image: url(../images/social/discord.svg);
+}
 
 /* Pure tags */
 
+html, body {
+    height: -webkit-fill-available;
+    overflow: hidden;
+}
+
 body {
-    background-image: url(../images/background/background.jpg);
-    background-size: cover;
+    height: 100vh;
 }
 
 button {
     width: 40%;
     height: 40px;
-    margin: 10px auto;
+    margin: 0 auto;
+    margin-bottom: 10px;
     font-size: 15px;
     background-color: rgba(0, 0, 0, 0.5);
     color: #fff;
@@ -85,3 +234,107 @@ table {
     -webkit-box-shadow: 1px 1px 9px 4px rgba(0,0,0,0.89); 
     box-shadow: 1px 1px 9px 4px rgba(0,0,0,0.89);
 }
+
+
+
+/* slider */
+
+input[type=range] {
+    width: 80%;
+    margin: 6.65px 0;
+    background-color: transparent;
+    -webkit-appearance: none;
+}
+
+input[type=range]:focus {
+    outline: none;
+}
+
+input[type=range]::-webkit-slider-runnable-track {
+    background-image: url(../images/background/dirt.jpg);
+    background-size: cover;
+    border: 1px solid #000;
+    width: 100%;
+    height: 12.7px;
+    cursor: pointer;
+}
+
+input[type=range]::-webkit-slider-thumb {
+    margin-top: -6.65px;
+    width: 13px;
+    height: 26px;
+    background-image: url(../images/background/stone.jpg);
+    background-size: cover;
+    border: 1px solid #000;
+    cursor: pointer;
+    -webkit-appearance: none;
+}
+
+input[type=range]:focus::-webkit-slider-runnable-track {
+    background-image: url(../images/background/dirt.jpg);
+    background-size: cover;
+}
+
+input[type=range]::-moz-range-track {
+    background-image: url(../images/background/dirt.jpg);
+    background-size: cover;
+    border: 1px solid #000;
+    width: 100%;
+    height: 12.7px;
+    cursor: pointer;
+}
+
+input[type=range]::-moz-range-thumb {
+    width: 13px;
+    height: 26px;
+    background-image: url(../images/background/stone.jpg);
+    background-size: cover;
+    border: 1px solid #000;
+    cursor: pointer;
+}
+
+input[type=range]::-ms-track {
+    background: transparent;
+    border-color: transparent;
+    border-width: 6.65px 0;
+    color: transparent;
+    width: 100%;
+    height: 12.7px;
+    cursor: pointer;
+}
+
+input[type=range]::-ms-fill-lower {
+    background-image: url(../images/background/dirt.jpg);
+    background-size: cover;
+    border: 1px solid #000;
+}
+
+input[type=range]::-ms-fill-upper {
+    background-image: url(../images/background/dirt.jpg);
+    background-size: cover;
+    border: 1px solid #000;
+}
+
+input[type=range]::-ms-thumb {
+    width: 13px;
+    height: 26px;
+    background-image: url(../images/background/stone.jpg);
+    background-size: cover;
+    border: 1px solid #000;
+    cursor: pointer;
+    margin-top: 0px;
+}
+
+input[type=range]:focus::-ms-fill-lower {
+    background-image: url(../images/background/dirt.jpg);
+    background-size: cover;
+    border: 1px solid #000;
+}
+
+input[type=range]:focus::-ms-fill-upper {
+    background-image: url(../images/background/dirt.jpg);
+    background-size: cover;
+    border: 1px solid #000;
+}
+  
+  
