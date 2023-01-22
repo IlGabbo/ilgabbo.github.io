@@ -18,8 +18,10 @@
                     <div class="volume-icon icon" id="volume-icon"></div>
                 </div>
                 <div class="volume">
-                    <input type="range" name="volume" id="volume" min="0" max="100" value="50">
-                    <p id="volume-status">Volume: 50</p>
+                    <input type="range" name="music-volume" id="music-volume" min="0" max="100" value="50">
+                    <p id="volume-status">Music: 50%</p>
+                    <input type="range" name="general-volume" id="general-volume" min="0" max="100" value="20">
+                    <p id="general-volume-status">General Volume: 20%</p>
                 </div>
                 <div class="social">
                     <div class="github social-icon" onclick="window.open('https://github.com/IlGabbo')"></div>
@@ -32,14 +34,14 @@
                 Winner
             </div>
             <div>
-                <button onclick="document.querySelector('#status').style.display = 'none'; resetGame()">Close</button>
+                <button onclick="document.querySelector('#status').style.display = 'none'; resetGame('static/music/click.ogg')">Close</button>
             </div>
         </div>
         <div class="container">        
             <div class="title"></div>
             <div class="buttons">
-                <button onclick="document.getElementById('game').style.display = 'flex'">Player vs Player</button>
-                <button>Play with bot</button>
+                <button onclick="openMultiplayer()">Player vs Player</button>
+                <button onclick="openSp()">Play with bot</button>
             </div>    
         </div>
         <div class="game" style="display: none;" id="game">
@@ -62,7 +64,31 @@
             </table>
             <button id="reset">Reset</button>
             <button id="home">Home</button>
-        </div>   
+        </div> 
+        <div class="singleplayer" id="sp">
+            <div class="difficulty">
+                <h2>Difficulty</h2>
+                <button class="difficulty-selector">Easy</button>
+                <button class="close-window">Close</button>
+            </div>
+            <table class="table">
+                <tr row=0>
+                    <th cell=0></th>
+                    <th cell=1></th>
+                    <th cell=2></th>
+                </tr>
+                <tr row=1>
+                    <th cell=0></th>
+                    <th cell=1></th>
+                    <th cell=2></th>
+                </tr>
+                <tr row=2>
+                    <th cell=0></th>
+                    <th cell=1></th>
+                    <th cell=2></th>
+                </tr>
+            </table>
+        </div>  
     </div>    
     <script src="./static/js/js.js"></script>
 </body>
