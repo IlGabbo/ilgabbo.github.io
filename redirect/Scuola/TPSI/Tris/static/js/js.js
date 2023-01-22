@@ -11,7 +11,7 @@ let cells = [
 ]
 let count = 0
 let volume_mute = true         
-let is_x_writed = false                     
+let is_x_written = false                     
 music.loop = true                
 
 function loadMusic() {
@@ -58,7 +58,7 @@ function resetGame() {
         [null, null, null],  // 1
         [null, null, null]   // 2
     ]
-    is_x_writed = false
+    is_x_written = false
     value = null
     count = 0
 }
@@ -87,14 +87,14 @@ th.forEach(th => th.addEventListener("click", () => {
     let win = new Audio("static/music/levelup.ogg")
     win.volume = 0.5
     if (th.textContent == "") {
-        if (!is_x_writed) {
+        if (!is_x_written) {
             value = "X"
             th.innerHTML = value            
-            is_x_writed = true
+            is_x_written = true
         } else {
             value = "O"
             th.innerHTML = value
-            is_x_writed = false
+            is_x_written = false
         }
     } else {
         pop.src = "static/music/break.ogg"
