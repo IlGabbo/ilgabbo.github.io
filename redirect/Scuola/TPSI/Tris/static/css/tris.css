@@ -16,6 +16,7 @@
     background-size: cover;
     position: relative;
     overflow-x: hidden;
+    margin: 0 auto;
 }
 
 .title {
@@ -222,6 +223,13 @@
     margin-top: 20px;
     width: 60%;
     background-image: url(../images/background/easy_button.png);
+}
+
+#coming-soon {
+    color: yellow;
+    display: none;
+    position: absolute;
+    bottom: 10px;
 }
 
 /* Pure tags */

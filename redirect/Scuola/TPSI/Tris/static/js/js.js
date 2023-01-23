@@ -1,6 +1,7 @@
 let music = new Audio("static/music/music.ogg")
 let pop = new Audio("static/music/pop.ogg")
 let win = new Audio("static/music/levelup.ogg")
+let click = new Audio("static/music/click.ogg")
 let general = 0.2
 let music_volume_slide = document.getElementById("music-volume")
 let general_volume = document.getElementById("general-volume")
@@ -32,7 +33,6 @@ function showHideSettings() {
 
 function openMultiplayer() {
     document.getElementById('game').style.display = 'flex'
-    let click = new Audio("static/music/click.ogg")
     click.volume = general
     click.play()
     multiplayer()
@@ -40,13 +40,13 @@ function openMultiplayer() {
 
 function openSp() {
     document.getElementById('sp').style.display = 'flex'
-    let click = new Audio("static/music/click.ogg")
     click.volume = general
     click.play()
     document.querySelector(".close-window").addEventListener("click", (e) => {
         document.querySelector(".difficulty").style.display = "none"
+        click.play()
         playWithBot(difficulty)
-    })
+    })   
 }
 
 function checkVictory(cells) {
@@ -87,85 +87,6 @@ function resetGame(src) {
     }
 }
 
-function playWithBot(difficulty) {    
-    console.log(difficulty)
-    let available_cells = [
-        [1,2,3],
-        [1,2,3],
-        [1,2,3]
-    ]
-    switch(difficulty) {
-        case "easy":
-            thSp.forEach(th => th.addEventListener("click", () => {
-                win.volume = general
-                if (th.textContent == "") {
-                    /* value = "X"
-                    th.innerHTML = value */
-                    cells[th.parentNode.getAttribute("row")][th.getAttribute("cell")] = value
-                    available_cells[th.parentNode.getAttribute("row")][th.getAttribute("cell")] = null
-                    pop.src = "static/music/pop.ogg"
-                    let row = Math.floor(Math.random()*available_cells.length)
-                    let cell = Math.floor(Math.random()*row)
-
-                    do {
-                        row = Math.floor(Math.random()*available_cells.length)
-                        cell = Math.floor(Math.random()*row)
-                    } while (cells[row][cell] != null && available_cells[row][cell] != null)
-                    available_cells[row][cell] = null
-                    cells[row][cell] = "O"
-                    console.log(cells)
-                    console.log(available_cells)
-                    console.log(th)
-
-                } else {
-                    pop.src = "static/music/break.ogg"           
-                }
-                read()
-                pop.volume = general
-                pop.play()
-            }))
-            break
-    }
-}
-
-function read() {
-    thSp.forEach(th => {
-        console.log(cells[incRow][inc])
-        th.innerHTML = cells[incRow][inc]
-        inc++
-        if (inc >= 3) {
-            inc = 0
-            incRow += 1
-        }
-    })
-}
-
-
-
-
-music_volume_slide.addEventListener("input", (e) => {
-    music.volume = e.currentTarget.value/100
-    document.getElementById("volume-status").innerHTML = `Music: ${e.currentTarget.value}%`
-})
-
-general_volume.addEventListener("input", (e) => {
-    general = e.currentTarget.value/100
-    document.getElementById("general-volume-status").innerHTML = `General Volume: ${e.currentTarget.value}%`
-})
-
-
-volume_icon.addEventListener("click", () => {
-    if (volume_mute) {
-        volume_icon.style.backgroundImage = "url(static/images/icon/volume-on.svg)"
-        music.play()
-        volume_mute = false
-    } else {
-        volume_icon.style.backgroundImage = "url(static/images/icon/volume-mute.svg)"
-        music.pause()
-        volume_mute = true
-    }
-})
-
 function multiplayer() {
     th.forEach(th => th.addEventListener("click", () => {
         win.volume = general
@@ -205,6 +126,96 @@ function multiplayer() {
     }))
 }
 
+function playWithBot(difficulty) {    
+    console.log(difficulty)
+    let available_cells = [
+        [0,1,2],
+        [0,1,2],
+        [0,1,2]
+    ]
+    switch(difficulty) {
+        case "easy":
+            thSp.forEach(th => th.addEventListener("click", () => {
+                win.volume = general
+                let row, cell
+                if (th.textContent == "") {
+                    value = "X"
+                    cells[th.parentNode.getAttribute("row")][th.getAttribute("cell")] = value
+                    let player_index = available_cells[th.parentNode.getAttribute("row")]
+                    player_index.splice(th.getAttribute("cell"), 1)
+                    pop.src = "static/music/pop.ogg"
+
+                    row = Math.floor(Math.random()*available_cells.length)
+                    cell = Math.floor(Math.random()*row)
+
+                    let bot_index = available_cells[row]
+                    bot_index.splice(cell, 1)
+                    cells[row][cell] = "O"
+                    console.log(cells)
+                    console.log(available_cells)
+
+                } else {
+                    pop.src = "static/music/break.ogg"           
+                }
+                read()
+                if (checkVictory(cells) == "X") {
+                    document.querySelector("#status").style.display = "flex"
+                    document.querySelector(".winner").innerHTML = "'X' won"
+                    win.play()
+                } else if (checkVictory(cells) == "O") {
+                    document.querySelector("#status").style.display = "flex"
+                    document.querySelector(".winner").innerHTML = "'O' won"
+                    win.play()
+                } else if (count == 9) {
+                    document.querySelector("#status").style.display = "flex"
+                    document.querySelector(".winner").innerHTML = "Drawing"
+                    pop.src = "static/music/break.ogg"
+                }
+                pop.volume = general
+                pop.play()
+            }))
+            break
+    }
+}
+
+function read() {
+    thSp.forEach(th => {
+        th.innerHTML = cells[incRow][inc]
+        inc++
+        if (inc >= 3) {
+            inc = 0
+            incRow += 1
+        }
+    })
+    inc = 0
+    incRow = 0
+}
+
+
+
+
+music_volume_slide.addEventListener("input", (e) => {
+    music.volume = e.currentTarget.value/100
+    document.getElementById("volume-status").innerHTML = `Music: ${e.currentTarget.value}%`
+})
+
+general_volume.addEventListener("input", (e) => {
+    general = e.currentTarget.value/100
+    document.getElementById("general-volume-status").innerHTML = `General Volume: ${e.currentTarget.value}%`
+})
+
+
+volume_icon.addEventListener("click", () => {
+    if (volume_mute) {
+        volume_icon.style.backgroundImage = "url(static/images/icon/volume-on.svg)"
+        music.play()
+        volume_mute = false
+    } else {
+        volume_icon.style.backgroundImage = "url(static/images/icon/volume-mute.svg)"
+        music.pause()
+        volume_mute = true
+    }
+})
 
 document.getElementById("reset").addEventListener("click", () => resetGame("static/music/anvil_land.ogg"))
 
@@ -214,23 +225,29 @@ document.getElementById("home").addEventListener("click", () => {
 })
 document.querySelector(".difficulty-selector").addEventListener("click", (e) => {
     let button = e.currentTarget
+    let coming_soon = document.getElementById("coming-soon")
+    click.volume = general
+    click.play()
     switch(button.textContent) {
         case "Easy":
             button.innerHTML = "Medium"
             button.style.backgroundImage = "url(static/images/background/medium_button.png)"
-            difficulty = "medium"
+            difficulty = "easy"
+            coming_soon.style.display = "block"
             break
         case "Medium":
             button.innerHTML = "Hard"
             button.style.backgroundImage = "url(static/images/background/hard_button.png)"
-            difficulty = "hard"
+            difficulty = "easy"
+            coming_soon.style.display = "block"
             break
         case "Hard":
             button.innerHTML = "Easy"
             button.style.backgroundImage = "url(static/images/background/easy_button.png)"
             difficulty = "easy"
+            coming_soon.style.display = "none"
             break  
-    }
+    }    
 })
 
 
