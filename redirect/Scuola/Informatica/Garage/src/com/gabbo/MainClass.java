@@ -7,14 +7,7 @@ public class MainClass {
             System.out.print(args);
         }
     }
-    private static boolean isNumber(String number) {
-        try {
-            Double.parseDouble(number);
-            return true;
-        } catch (Exception e) {
-            return false;
-        }
-    }
+
     public static void main(String[] args) {
         int choice = 0;
         String vehicle_type;
@@ -22,15 +15,16 @@ public class MainClass {
 
         Garage garage = new Garage();
 
+        SQL.connectToDb();
+
         while (true) {
             print("\n"+"""
                     [0] Enter vehicle
                     [1] Exit vehicle
                     [2] Search for a vehicle and print its information
                     [3] Print available places
-                    [4] Print occupied places
-                    [5] Print all cars
-                    [6] Exit                    
+                    [4] Print all vehicles
+                    [5] Exit                    
                     """);
             choice = k.nextInt();
             switch (choice) {
@@ -53,10 +47,10 @@ public class MainClass {
                     print("Car: " + garage.getCarAvailablePlaces()+"\n");
                     print("MotorBike: " + garage.getBikeAvailablePlaces()+"\n");
                 }
-                case 5 -> {
+                case 4 -> {
                     print(garage.getAllVehicles());
                 }
-                case 6 -> {
+                case 5 -> {
                     print("Leaving...");
                     System.exit(0);
                 }
