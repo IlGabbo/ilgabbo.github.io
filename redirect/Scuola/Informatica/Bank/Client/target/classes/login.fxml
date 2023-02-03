@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+
+<VBox fx:id="main_box" alignment="TOP_CENTER" maxHeight="500.0" maxWidth="800.0" minHeight="500.0" minWidth="800.0" prefHeight="500.0" prefWidth="800.0" style="-fx-background-color: linear-gradient(from 15% 15% to 100% 100%, #4b40ff, #97eeff);" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.gabbo.bank.AppController">
+   <children>
+      <Pane prefHeight="0.0" prefWidth="0.0" style="-fx-background-color: linear-gradient(from 15% 15% to 100% 100%, #4b40ff, #97eeff);" VBox.vgrow="ALWAYS">
+         <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#fefeff" height="385.0" layoutX="269.0" layoutY="58.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="263.0" />
+            <Label alignment="CENTER" layoutX="314.0" layoutY="98.0" prefHeight="49.0" prefWidth="172.0" style="-fx-font-weight: 700;" text="User Login" textAlignment="CENTER" textFill="#515151">
+               <font>
+                  <Font size="33.0" />
+               </font>
+            </Label>
+            <PasswordField fx:id="password" layoutX="301.0" layoutY="233.0" prefHeight="35.0" prefWidth="200.0" promptText="Password" />
+            <TextField fx:id="username" layoutX="300.0" layoutY="177.0" prefHeight="35.0" prefWidth="200.0" promptText="Username" />
+            <Button fx:id="login_button" layoutX="334.0" layoutY="317.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="132.0" style="-fx-background-color: linear-gradient(from 5% 5% to 100% 100%, #4b40ff, #97eeff); -fx-font-weight: 700;" text="Login" textFill="WHITE">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Label fx:id="error" alignment="CENTER" layoutX="269.0" layoutY="383.0" prefHeight="28.0" prefWidth="263.0" style="-fx-font-weight: bold;" textFill="RED">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font></Label>
+         </children>
+      </Pane>
+   </children>
+</VBox>
