@@ -45,7 +45,7 @@ public class SQL {
             createTable();
             status = true;
         } catch (Exception e) {
-            errorlog("error.log", e.getMessage());
+            errorlog("error.log", e.getMessage()+"\n");
             print("Error on connectDb (SQL) function");
             status = false;
         }
@@ -217,12 +217,4 @@ public class SQL {
             e.printStackTrace();
         }
     }
-
-     /* public static void main(String[] args) {
-        connectDb("gabbo");
-        /* createTable();
-        insertCredentials("gabbo", "gabry(22)");
-        readFromTable("user", "user");
-         del();
-    } */
 }

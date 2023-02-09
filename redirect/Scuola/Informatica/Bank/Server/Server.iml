@@ -10,11 +10,10 @@
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="file://$MODULE_DIR$/src/sqlite" />
+          <root url="jar://$MODULE_DIR$/src/sqlite/sqlite-jdbc-3.40.0.0.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
-        <jarDirectory url="file://$MODULE_DIR$/src/sqlite" recursive="false" />
       </library>
     </orderEntry>
   </component>

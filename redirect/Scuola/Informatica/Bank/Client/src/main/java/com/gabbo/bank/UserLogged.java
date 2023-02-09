@@ -22,8 +22,7 @@ public class UserLogged {
         this.user = user;
     }
     public void launchSession(ActionEvent actionEvent) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("logged.fxml"));
-        Scene scene = new Scene(root);
+        Scene scene = new Scene(FXMLLoader.load(getClass().getClassLoader().getResource("logged.fxml")));
         Stage appStage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
 
         ClientSock sock = new ClientSock();
