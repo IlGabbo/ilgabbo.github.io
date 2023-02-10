@@ -21,6 +21,9 @@ public class UserLogged {
     public UserLogged(String user) {
         this.user = user;
     }
+
+
+
     public void launchSession(ActionEvent actionEvent) throws IOException {
         Scene scene = new Scene(FXMLLoader.load(getClass().getClassLoader().getResource("logged.fxml")));
         Stage appStage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
@@ -61,18 +64,7 @@ public class UserLogged {
         movement_list.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
-                String actions = sock.sendCmd("mv_list", "");
-                String[] actions_split = actions.split("\n");
-                movement_box.setVisible(true);
-                list_box.getChildren().clear();
-                for (int i = 0; i < actions_split.length; i++) {
-                    if (actions_split[i] != null) {
-                        Button action = new Button(actions_split[i]);
-                        action.setPrefWidth(200.0);
-                        list_box.getChildren().add(action);
-                    }
-                }
-                movement_box.setContent(list_box);
+                    controller.updateActions(sock, movement_box, list_box);
                 }
             });
 

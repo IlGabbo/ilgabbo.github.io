@@ -65,6 +65,9 @@ public class AppController {
         TextField value_import = (TextField) scene.lookup("#value_import");
         Label action_status = (Label) scene.lookup("#action_status");
         Label balance = (Label) scene.lookup("#balance");
+        ScrollPane movement_box = (ScrollPane) scene.lookup("#movement_box");
+        VBox list_box = (VBox) scene.lookup("#list_box");
+
         ClientSock socket = new ClientSock();
         final boolean[] network_error = {false};
         if (action.equalsIgnoreCase("withdrawal")) {
@@ -79,7 +82,7 @@ public class AppController {
                                 String bal = socket.sendCmd("withdrawal", value_import.getText());
                                 String[] balnc = bal.split("\\s+");
                                 balance.setText("€" + balnc[0]);
-                                updateActions(scene, balnc[1]);
+                                updateActions(socket, movement_box, list_box);
                             }
                         });
                     }
@@ -95,9 +98,9 @@ public class AppController {
                             @Override
                             public void run() {
                                 String bal = socket.sendCmd("deposit", value_import.getText());
-                                String[] balnc = bal.split("\\s+");
+                                String[] balnc = bal.split("\\s+");  // split by space
                                 balance.setText("€" + balnc[0]);
-                                updateActions(scene, balnc[1]);  // Doesn't work
+                                updateActions(socket, movement_box, list_box);
                             }
                         });
                     }
@@ -105,19 +108,6 @@ public class AppController {
             });
         }
     }
-
-    public void updateActions(Scene scene, String values) {
-        ScrollPane mv_box = (ScrollPane) scene.lookup("#movement_box");
-        VBox list_box = (VBox) scene.lookup("#list_box");
-        mv_box.setVisible(true);
-        if (values != null && values.equalsIgnoreCase("")) {
-            Button action = new Button(values);
-            list_box.getChildren().add(action);
-        }
-        mv_box.setContent(list_box);
-    }
-
-
 
 
     public boolean moneyAction(String amount, Label action_status) {
@@ -130,6 +120,21 @@ public class AppController {
             action_status.setText("Type a number");
             return false;
         }
+    }
+
+    public void updateActions(ClientSock sock, ScrollPane movement_box, VBox list_box) {
+        String actions = sock.sendCmd("mv_list", "");
+        String[] actions_split = actions.split("\n");
+        movement_box.setVisible(true);
+        list_box.getChildren().clear();
+        for (int i = 0; i < actions_split.length; i++) {
+            if (actions_split[i] != null) {
+                Button action = new Button(actions_split[i]);
+                action.setPrefWidth(200.0);
+                list_box.getChildren().add(action);
+            }
+        }
+        movement_box.setContent(list_box);
     }
 }
 
