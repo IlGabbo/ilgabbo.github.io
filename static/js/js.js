@@ -7,7 +7,7 @@ let title = document.getElementById("title")
 let content_box = document.getElementById("content-box")
 let isBoxOpened = false
 
-
+// random comment
 
 notify.setAttribute("index", "0")
 notify.addEventListener("click", function(e) {
