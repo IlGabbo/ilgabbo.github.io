@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.*?>
+<?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<VBox id="mainbox" alignment="BOTTOM_CENTER" fillWidth="false" maxHeight="516.0" maxWidth="292" minHeight="500" minWidth="292" prefHeight="500.0" prefWidth="292.0" style="-fx-background-color: #202020;" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.gabbo.calculator.calculator.AppController">
+<VBox id="mainbox" alignment="BOTTOM_CENTER" fillWidth="false" maxHeight="516.0" maxWidth="292" minHeight="500" minWidth="292" prefHeight="509.0" prefWidth="292.0" style="-fx-background-color: #202020; -fx-border-radius: 100px;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.gabbo.calculator.calculator.AppController">
    <children>
-      <Pane prefHeight="196.0" prefWidth="276.0">
+      <Pane prefHeight="205.0" prefWidth="276.0">
          <children>
             <Label fx:id="result" alignment="TOP_RIGHT" layoutY="113.0" maxWidth="1.7976931348623157E308" prefHeight="63.0" prefWidth="276.0" text="0" textFill="WHITE">
                <font>
@@ -19,11 +20,31 @@
                   <Font size="15.0" />
                </font>
             </Label>
-            <Label layoutX="14.0" layoutY="14.0" prefHeight="37.0" prefWidth="213.0" text="Calulator 2000" textFill="WHITE">
+            <Label layoutX="14.0" layoutY="54.0" prefHeight="37.0" prefWidth="213.0" text="Calculator 2000" textFill="WHITE">
                <font>
-                  <Font name="System Bold" size="21.0" />
+                  <Font name="Arial" size="21.0" />
                </font>
             </Label>
+            <Pane fx:id="drag_bar" layoutX="-8.0" layoutY="-2.0" prefHeight="35.0" prefWidth="292.0" style="-fx-background-color: transparent;">
+               <children>
+                  <Button fx:id="close_button" alignment="CENTER" layoutX="255.0" layoutY="2.0" mnemonicParsing="false" onAction="#closeWindow" prefHeight="35.0" prefWidth="38.0" style="-fx-background-color: transparent; -fx-border-radius: 0px;" text="x" textFill="WHITE">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="minimize_button" alignment="CENTER" layoutX="212.0" layoutY="2.0" maxWidth="38.0" mnemonicParsing="false" prefHeight="13.0" prefWidth="38.0" style="-fx-background-color: transparent; -fx-border-radius: 0px;" text="-" textFill="WHITE">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Button>
+               </children>
+            </Pane>
          </children>
       </Pane>
       <GridPane alignment="CENTER_LEFT" hgap="5.0" minHeight="-Infinity" prefHeight="294.0" prefWidth="276.0" vgap="5.0" VBox.vgrow="NEVER">
@@ -134,7 +155,7 @@
                <font>
                   <Font size="16.0" />
                </font></Button>
-            <Button fx:id="result_button" mnemonicParsing="false" onAction="#getButtonValue" prefHeight="95.0" prefWidth="153.0" style="-fx-background-color: #76b9ed;" text="=" textFill="WHITE" GridPane.columnIndex="3" GridPane.rowIndex="5" GridPane.valignment="CENTER">
+            <Button fx:id="calc" mnemonicParsing="false" onAction="#getButtonValue" prefHeight="95.0" prefWidth="153.0" style="-fx-background-color: #76b9ed;" text="=" textFill="WHITE" GridPane.columnIndex="3" GridPane.rowIndex="5" GridPane.valignment="CENTER">
                <font>
                   <Font size="16.0" />
                </font></Button>

@@ -5,9 +5,11 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 
+
 public class AppController {
     @FXML
     private Label result, history;
+    private Button close_button;
     private Button percent_button;
     private Button ce_button;
     private Button c_button;
@@ -16,7 +18,7 @@ public class AppController {
     private Button raisedtosecond_button;
     private Button square_button;
     private Button zero, one, two, three, four, five, six, seven, eight, nine, plus_or_minus, comma;
-    private Button result_button, addiction_button, subtraction_button, multiplication_button, division_button;
+    private Button calc, addiction_button, subtraction_button, multiplication_button, division_button;
     private String operation = "";
 
 
@@ -27,7 +29,7 @@ public class AppController {
         String button_text = btn.getText();
         String button_id = btn.getId();
         switch (button_id) {
-            case "result_button" -> {
+            case "calc" -> {
                 if (operation != "0") {
                     history.setText(operation);
                     result.setText("0");
@@ -69,5 +71,14 @@ public class AppController {
             }
         }
         result.setText(operation);
+    }
+
+    @FXML
+    private void closeWindow() {
+        System.exit(0);
+    }
+
+    private String calc(String operation) {
+
     }
 }
