@@ -4,6 +4,9 @@ import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+import
 
 
 public class AppController {
@@ -20,6 +23,7 @@ public class AppController {
     private Button zero, one, two, three, four, five, six, seven, eight, nine, plus_or_minus, comma;
     private Button calc, addiction_button, subtraction_button, multiplication_button, division_button;
     private String operation = "";
+    private String displayed_operation = "";
 
 
     @FXML
@@ -39,8 +43,9 @@ public class AppController {
 
             }
             case "ce_button", "c_button" -> {
-                operation = "0";
+                operation = "";
                 history.setText("");
+                displayed_operation = "0";
             }
             case "delete_button" -> {
                 if (result.getText() != "0") {
@@ -59,18 +64,26 @@ public class AppController {
             case "raisedtosecond_button" -> {}
             case "square_button" -> {
                 operation += "√";
+                displayed_operation += "√";
             }
             case "plus_or_minus" -> {
                 operation += "-";
+                displayed_operation += "-";
             }
             case "comma" -> {
                 operation += ".";
             }
+            case "multiplication_button" -> {
+                operation += "*";
+                displayed_operation += "x";
+            }
             default -> {
                 operation += button_text;
+                displayed_operation += button_text;
             }
         }
-        result.setText(operation);
+        result.setText(displayed_operation);
+        System.out.println(operation);
     }
 
     @FXML
@@ -78,7 +91,8 @@ public class AppController {
         System.exit(0);
     }
 
-    private String calc(String operation) {
-
+    private void calc() {
+        String symbols = "[+\\-*/^v]";
     }
+
 }
