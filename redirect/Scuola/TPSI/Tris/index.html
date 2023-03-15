@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./static/css/tris.css">
+    <link rel="shortcut icon" href="static/images/favicon/minecraft.ico" type="image/x-icon">
     <title>Tic Tac Toe</title>
 </head>
 <body> 
@@ -44,7 +45,7 @@
                 <button onclick="openSp()">Play with bot</button>
             </div>    
         </div>
-        <div class="game" style="display: none;" id="game">
+        <div class="game" id="game">
             <table>
                 <tr row=0>
                     <th cell=0></th>
@@ -65,30 +66,14 @@
             <button id="reset">Reset</button>
             <button id="home">Home</button>
         </div> 
+
         <div class="singleplayer" id="sp">
             <div class="difficulty">
                 <h2>Difficulty</h2>
                 <button class="difficulty-selector">Easy</button>
                 <button class="close-window">Close</button>
                 <span id="coming-soon">Coming Soon...</span>
-            </div>
-            <table class="table">
-                <tr row=0>
-                    <th cell=0></th>
-                    <th cell=1></th>
-                    <th cell=2></th>
-                </tr>
-                <tr row=1>
-                    <th cell=0></th>
-                    <th cell=1></th>
-                    <th cell=2></th>
-                </tr>
-                <tr row=2>
-                    <th cell=0></th>
-                    <th cell=1></th>
-                    <th cell=2></th>
-                </tr>
-            </table>
+            </div>            
         </div>  
     </div>    
     <script src="./static/js/js.js"></script>
