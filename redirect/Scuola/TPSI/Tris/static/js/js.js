@@ -19,8 +19,7 @@ let cells = [
 ]
 let count = 0
 let volume_mute = true         
-let is_x_written = false     
-let isPlayingThePlayer = true                
+let is_x_written = false      
 music.loop = true      
 
 
@@ -41,7 +40,7 @@ function openMultiplayer() {
     multiplayer()
 }
 
-function openSp() {
+function openSinglePlayer() {
     document.getElementById('game').style.display = 'none'
     document.getElementById('sp').style.display = 'flex'
     click.volume = general
@@ -49,7 +48,6 @@ function openSp() {
     document.querySelector(".close-window").addEventListener("click", (e) => {
         document.getElementById('sp').style.display = 'none'
         click.play()
-        isPlayingThePlayer = false
         singleplayer(document.querySelector(".difficulty-selector").textContent)
     })   
 }
@@ -76,7 +74,6 @@ function checkVictory(cells) {
 }
 
 function resetGame(src) {
-    isPlayingThePlayer = true
     if (src != null) {
         let reset_audio = new Audio(src)
         reset_audio.volume = general
@@ -94,106 +91,102 @@ function resetGame(src) {
 }
 
 function multiplayer() {
-    if (isPlayingThePlayer) {
-        th.forEach(th => th.addEventListener("click", () => {
-            win.volume = general
-            if (th.textContent == "") {
-                pop.src = "static/music/pop.ogg"
-                if (!is_x_written) {
-                    value = "X"
-                    th.innerHTML = value            
-                    is_x_written = true
-                } else {
-                    value = "O"
-                    th.innerHTML = value
-                    is_x_written = false
-                }
-                count++
+    th.forEach(th => th.addEventListener("click", () => {
+        win.volume = general
+        if (th.textContent == "") {
+            pop.src = "static/music/pop.ogg"
+            if (!is_x_written) {
+                value = "X"
+                th.innerHTML = value            
+                is_x_written = true
             } else {
-                pop.src = "static/music/break.ogg"
+                value = "O"
+                th.innerHTML = value
+                is_x_written = false
             }
-        
-            cells[th.parentNode.getAttribute("row")][th.getAttribute("cell")] = value
-        
-            if (checkVictory(cells) == "X") {
-                document.querySelector("#status").style.display = "flex"
-                document.querySelector(".winner").innerHTML = "'X' won"
-                win.play()
-            } else if (checkVictory(cells) == "O") {
-                document.querySelector("#status").style.display = "flex"
-                document.querySelector(".winner").innerHTML = "'O' won"
-                win.play()
-            } else if (count == 9) {
-                document.querySelector("#status").style.display = "flex"
-                document.querySelector(".winner").innerHTML = "Drawing"
-                pop.src = "static/music/break.ogg"
-            }
-            pop.volume = general
-            pop.play()    
-        }))
-    }    
-}
+            count++
+        } else {
+            pop.src = "static/music/break.ogg"
+        }
+    
+        cells[th.parentNode.getAttribute("row")][th.getAttribute("cell")] = value
+    
+        if (checkVictory(cells) == "X") {
+            document.querySelector("#status").style.display = "flex"
+            document.querySelector(".winner").innerHTML = "'X' won"
+            win.play()
+        } else if (checkVictory(cells) == "O") {
+            document.querySelector("#status").style.display = "flex"
+            document.querySelector(".winner").innerHTML = "'O' won"
+            win.play()
+        } else if (count == 9) {
+            document.querySelector("#status").style.display = "flex"
+            document.querySelector(".winner").innerHTML = "Drawing"
+            pop.src = "static/music/break.ogg"
+        }
+        pop.volume = general
+        pop.play()    
+    }))
+}    
 
 function singleplayer(difficulty) {
-    if (!isPlayingThePlayer) {
-        document.getElementById('sp').style.display = 'none'
-        document.getElementById('game').style.display = 'flex'
-        click.volume = general
-        click.play()
-        switch (difficulty) {
-            case "Easy":
-                th.forEach(th => th.addEventListener("click", (e) => {
-                    win.volume = general
-                    if (th.textContent == "") {
-                        pop.src = "static/music/pop.ogg"
-                        value = "X"
-                        th.innerHTML = value 
-                        cells[th.parentNode.getAttribute("row")][th.getAttribute("cell")] = value           
-                        count++
-                        
-                        let emptyCellFound = false
-                        for (let i = 0; i < cells.length; i++) {
-                            if (!emptyCellFound) {
-                                for (let j = 0; j < cells[i].length; j++) {
-                                    if (cells[i][j] == null) {                                    
-                                        emptyCellFound = true
-                                        cells[i][j] = "O"
-                                        document.querySelector(`[row='${i}'] [cell='${j}']`).innerHTML = "O"   
-                                        count++                                                         
-                                        break
-                                    }
+    document.getElementById('sp').style.display = 'none'
+    document.getElementById('game').style.display = 'flex'
+    click.volume = general
+    click.play()
+    switch (difficulty) {
+        case "Easy":
+            th.forEach(th => th.addEventListener("click", (e) => {
+                win.volume = general
+                if (th.textContent == "") {
+                    pop.src = "static/music/pop.ogg"
+                    value = "X"
+                    th.innerHTML = value 
+                    cells[th.parentNode.getAttribute("row")][th.getAttribute("cell")] = value           
+                    count++
+                    
+                    let emptyCellFound = false
+                    for (let i = 0; i < cells.length; i++) {
+                        if (!emptyCellFound) {
+                            for (let j = 0; j < cells[i].length; j++) {
+                                if (cells[i][j] == null) {                                    
+                                    emptyCellFound = true
+                                    cells[i][j] = "O"
+                                    document.querySelector(`[row='${i}'] [cell='${j}']`).innerHTML = "O"   
+                                    count++                                                         
+                                    break
                                 }
-                            } else {
-                                break
-                            }        
-                        }
-                    } else {
-                        pop.src = "static/music/break.ogg"
+                            }
+                        } else {
+                            break
+                        }        
                     }
-                    if (checkVictory(cells) == "X") {
-                        document.querySelector("#status").style.display = "flex"
-                        document.querySelector(".winner").innerHTML = "'X' won"
-                        win.play()
-                    } else if (checkVictory(cells) == "O") {
-                        document.querySelector("#status").style.display = "flex"
-                        document.querySelector(".winner").innerHTML = "'O' won"
-                        win.play()
-                    } else if (count == 9) {
-                        document.querySelector("#status").style.display = "flex"
-                        document.querySelector(".winner").innerHTML = "Drawing"
-                        pop.src = "static/music/break.ogg"
-                    }
-                    pop.volume = general
-                    pop.play() 
-                }))
-                break
-            
-            default:
-                console.log("Nothing")
-                break
-        }
-    }    
-}
+                } else {
+                    pop.src = "static/music/break.ogg"
+                }
+                if (checkVictory(cells) == "X") {
+                    document.querySelector("#status").style.display = "flex"
+                    document.querySelector(".winner").innerHTML = "'X' won"
+                    win.play()
+                } else if (checkVictory(cells) == "O") {
+                    document.querySelector("#status").style.display = "flex"
+                    document.querySelector(".winner").innerHTML = "'O' won"
+                    win.play()
+                } else if (count == 9) {
+                    document.querySelector("#status").style.display = "flex"
+                    document.querySelector(".winner").innerHTML = "Drawing"
+                    pop.src = "static/music/break.ogg"
+                }
+                pop.volume = general
+                pop.play() 
+            }))
+            break
+        
+        default:
+            console.log("Nothing")
+            break
+    }
+}    
 
 music_volume_slide.addEventListener("input", (e) => {
     music.volume = e.currentTarget.value/100

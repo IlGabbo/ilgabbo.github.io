@@ -13,6 +13,7 @@
     width: 414px;
     height: 100vh;
     background-image: url(../images/background/background.jpg);
+    background-position: top right;
     background-size: cover;
     position: relative;
     overflow-x: hidden;
@@ -54,12 +55,16 @@
     position: absolute;
     top: 0;
     left: 0;
-    background-image: url(../images/background/background.jpg);
     background-size: cover;
     display: none;
     justify-content: center;
     flex-direction: column;
     align-items: center;
+    background-color: transparent;
+}
+
+.sas {
+    background-color: #fff;
 }
 
 #reset {
