@@ -15,9 +15,23 @@
     background-image: url(../images/background/background.jpg);
     background-position: top right;
     background-size: cover;
+    background-repeat: repeat-x;
     position: relative;
     overflow-x: hidden;
     margin: 0 auto;
+}
+
+.background-rotation {
+    animation: bg-rotation 105s linear infinite;
+}
+
+@keyframes bg-rotation {
+    from {
+        background-position: 0% 0%;
+    }    
+    to {
+        background-position: 100% 0%;
+    }
 }
 
 .title {
