@@ -4,30 +4,23 @@ import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-import
+
+import javax.script.ScriptEngine;
+import javax.script.ScriptEngineManager;
+import javax.script.ScriptException;
+
 
 
 public class AppController {
     @FXML
     private Label result, history;
-    private Button close_button;
-    private Button percent_button;
-    private Button ce_button;
-    private Button c_button;
-    private Button delete_button;
-    private Button onedividedx_button;
-    private Button raisedtosecond_button;
-    private Button square_button;
-    private Button zero, one, two, three, four, five, six, seven, eight, nine, plus_or_minus, comma;
-    private Button calc, addiction_button, subtraction_button, multiplication_button, division_button;
     private String operation = "";
     private String displayed_operation = "";
 
 
+
     @FXML
-    private void getButtonValue(Event e) {
+    private void getButtonValue(Event e) throws ScriptException {
         Object node = e.getSource();
         Button btn = (Button) node;
         String button_text = btn.getText();
@@ -37,6 +30,7 @@ public class AppController {
                 if (operation != "0") {
                     history.setText(operation);
                     result.setText("0");
+                    calc(operation);
                 } else {
                     history.setText("");
                 }
@@ -91,8 +85,15 @@ public class AppController {
         System.exit(0);
     }
 
-    private void calc() {
-        String symbols = "[+\\-*/^v]";
+    private void calc(String operation) {
+        ScriptEngineManager mgr = new ScriptEngineManager();
+        ScriptEngine engine = mgr.getEngineByName("rhino");
+        String op = "40+2";
+        try {
+            System.out.println(engine.eval(op));
+        } catch (ScriptException e) {
+            e.printStackTrace();
+        }
     }
 
 }
