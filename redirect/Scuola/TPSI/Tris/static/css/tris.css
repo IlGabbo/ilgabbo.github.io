@@ -9,21 +9,39 @@
     font-family: "Minecraft", sans-serif;
 }
 
+.blur {
+    background-image: url(../images/background/nether.png);
+    background-position: center;
+    background-size: cover;
+    filter: blur(0px);
+    z-index: 1;
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    filter: blur(4px);
+}
+
 .width-414 {
     width: 414px;
     height: 100vh;
-    background-image: url(../images/background/background.jpg);
-    background-position: top right;
+    background-image: url(../images/background/nether.png);
+    background-position: center;
     background-size: cover;
     background-repeat: repeat-x;
-    position: relative;
+    position: absolute;
     overflow-x: hidden;
-    margin: 0 auto;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: 0 auto;    
+    z-index: 130;
+    -webkit-box-shadow: 1px 1px 11px 2px #fff; 
+    box-shadow: 1px 1px 11px 2px #fff;
 }
 
-.background-rotation {
+/* .background-rotation {
     animation: bg-rotation 105s linear infinite;
-}
+} */
 
 @keyframes bg-rotation {
     from {
@@ -112,7 +130,7 @@
     height: 300px;
     border: 3px solid #000;
     text-align: center;
-    background-image: url(../images/background/grass.jpg);
+    background-image: url(../images/background/red-nether-bricks.png);
     background-size: cover;
     -webkit-box-shadow: 0px 0px 14px 1px #000000; 
     box-shadow: 0px 0px 14px 1px #000000;
@@ -161,8 +179,8 @@
 .status {
     width: 50%;
     height: 100px;
-    border: 2px solid rgb(202, 202, 202);
-    background-image: url(../images/background/dirt.jpg);
+    
+    background-image: url(../images/background/red-nether-bricks.png);
     position: absolute;
     top: 50%;
     left: 50%;
@@ -171,8 +189,8 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    -webkit-box-shadow: 0px 0px 14px 1px #000000; 
-    box-shadow: 0px 0px 14px 1px #000000;
+    -webkit-box-shadow: 0px 0px 14px 1px #fff; 
+    box-shadow: 0px 0px 14px 1px #fff;
     color: #fff;
     z-index: 90;
 }
@@ -227,10 +245,11 @@
     position: absolute;
     width: 50%;
     height: 300px;
-    background-image: url(../images/background/stone.jpg);
+    background-image: url(../images/background/respawn-anchor.png);
     background-size: cover;
-    -webkit-box-shadow: 0px 0px 14px 1px #000000; 
-    box-shadow: 0px 0px 14px 1px #000000;
+    background-position: center;
+    -webkit-box-shadow: 0px 0px 16px 10px #000000; 
+    box-shadow: 0px 0px 16px 10px #000000;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -284,7 +303,7 @@ h1 {
 th {
     width: 60px;
     height: 60px;
-    border: 2px solid black;
+    border: 2px solid #000;
     color: #fff;
     font-size: 45px;
     text-align: center;
@@ -312,9 +331,9 @@ input[type=range]:focus {
 }
 
 input[type=range]::-webkit-slider-runnable-track {
-    background-image: url(../images/background/dirt.jpg);
-    background-size: cover;
-    border: 1px solid #000;
+    background-image: url(../images/background/respawn-anchor.png);
+    background-size: contain;
+    
     width: 100%;
     height: 12.7px;
     cursor: pointer;
@@ -324,22 +343,22 @@ input[type=range]::-webkit-slider-thumb {
     margin-top: -6.65px;
     width: 13px;
     height: 26px;
-    background-image: url(../images/background/stone.jpg);
-    background-size: cover;
+    background-image: url(../images/background/obsidian.jpg);
+    background-size: cover;    
     border: 1px solid #000;
     cursor: pointer;
     -webkit-appearance: none;
 }
 
 input[type=range]:focus::-webkit-slider-runnable-track {
-    background-image: url(../images/background/dirt.jpg);
-    background-size: cover;
+    background-image: url(../images/background/respawn-anchor.png);
+    background-size: contain;
 }
 
 input[type=range]::-moz-range-track {
-    background-image: url(../images/background/dirt.jpg);
-    background-size: cover;
-    border: 1px solid #000;
+    background-image: url(../images/background/respawn-anchor.png);
+    background-size: contain;
+    
     width: 100%;
     height: 12.7px;
     cursor: pointer;
@@ -348,9 +367,9 @@ input[type=range]::-moz-range-track {
 input[type=range]::-moz-range-thumb {
     width: 13px;
     height: 26px;
-    background-image: url(../images/background/stone.jpg);
+    background-image: url(../images/background/respawn-anchor.png);
     background-size: cover;
-    border: 1px solid #000;
+    
     cursor: pointer;
 }
 
@@ -362,40 +381,6 @@ input[type=range]::-ms-track {
     width: 100%;
     height: 12.7px;
     cursor: pointer;
-}
-
-input[type=range]::-ms-fill-lower {
-    background-image: url(../images/background/dirt.jpg);
-    background-size: cover;
-    border: 1px solid #000;
-}
-
-input[type=range]::-ms-fill-upper {
-    background-image: url(../images/background/dirt.jpg);
-    background-size: cover;
-    border: 1px solid #000;
-}
-
-input[type=range]::-ms-thumb {
-    width: 13px;
-    height: 26px;
-    background-image: url(../images/background/stone.jpg);
-    background-size: cover;
-    border: 1px solid #000;
-    cursor: pointer;
-    margin-top: 0px;
-}
-
-input[type=range]:focus::-ms-fill-lower {
-    background-image: url(../images/background/dirt.jpg);
-    background-size: cover;
-    border: 1px solid #000;
-}
-
-input[type=range]:focus::-ms-fill-upper {
-    background-image: url(../images/background/dirt.jpg);
-    background-size: cover;
-    border: 1px solid #000;
 }
   
   

@@ -1,5 +1,5 @@
 let music = new Audio("static/music/music.ogg")
-let pop = new Audio("static/music/pop.ogg")
+let pop = new Audio()
 let win = new Audio("static/music/levelup.ogg")
 let click = new Audio("static/music/click.ogg")
 let general = 0.2
@@ -22,6 +22,7 @@ let volume_mute = true
 let is_x_written = false   
 let isPlayingThePlayer = true 
 let isThereAWinner = false  
+let difficulty;
 music.loop = true      
 
 
@@ -41,7 +42,7 @@ function openMultiplayer() {
     click.volume = general
     click.play()
     isPlayingThePlayer = true    
-    match(null)
+    match()
 }
 
 function openSinglePlayer() {
@@ -55,7 +56,7 @@ function openSinglePlayer() {
         document.getElementById('game').style.display = 'flex' 
         click.play()
         isPlayingThePlayer = false
-        let difficulty = document.querySelector(".difficulty-selector").textContent
+        difficulty = document.querySelector(".difficulty-selector").textContent
         let unavailable_difficulties = ["medium", "hard"]
 
         if (unavailable_difficulties.includes(difficulty.toLowerCase())) {
@@ -64,7 +65,7 @@ function openSinglePlayer() {
             document.getElementById('game').style.display = 'none'             
             return
         }
-        match(document.querySelector(".difficulty-selector").textContent)
+        match()
     })   
 }
 
@@ -107,8 +108,9 @@ function resetGame(src) {
     }
 }
 
-function match(difficulty) {
-    th.forEach(th => th.addEventListener("click", () => {
+function match() {
+    th.forEach(th => th.addEventListener("click", () => {        
+        pop.volume = general
         if (!isThereAWinner) {
             win.volume = general
             if (th.textContent == "") {
@@ -117,42 +119,43 @@ function match(difficulty) {
                     if (!is_x_written) {
                         value = "X"                    
                         is_x_written = true
+                        pop.play()
                     } else {
                         value = "O"                    
                         is_x_written = false
+                        pop.play()
                     }
                     th.innerHTML = value
                     cells[th.parentNode.getAttribute("row")][th.getAttribute("cell")] = value  
                     count++
-                } else {
-                    document.getElementById('sp').style.display = 'none'
-                    document.getElementById('game').style.display = 'flex'               
-                    click.volume = general
-                    click.play()
-
-                    pop.src = "static/music/pop.ogg"
+                } else {                                                                      
+                    pop.play()
                     value = "X"
                     th.innerHTML = value 
                     cells[th.parentNode.getAttribute("row")][th.getAttribute("cell")] = value           
-                    count++                
-                    switch (difficulty.toLocaleLowerCase()) {
+                    count++                                                      
+                    switch (difficulty.toLowerCase()) {
                         case "easy": 
                             let emptyCellFound = false
-                                for (let i = 0; i < cells.length; i++) {
-                                    if (!emptyCellFound) {
-                                        for (let j = 0; j < cells[i].length; j++) {
-                                            if (cells[i][j] == null) {                                    
-                                                emptyCellFound = true
-                                                cells[i][j] = "O"
-                                                document.querySelector(`[row='${i}'] [cell='${j}']`).innerHTML = "O"   
-                                                count++                                                         
-                                                break
-                                            }
+                            for (let i = 0; i < cells.length; i++) {
+                                if (!emptyCellFound) {
+                                    for (let j = 0; j < cells[i].length; j++) {
+                                        if (cells[i][j] == null) {                                    
+                                            emptyCellFound = true
+                                            cells[i][j] = "O"
+                                            document.querySelector(`[row='${i}'] [cell='${j}']`).innerHTML = "O"   
+                                            count++                                                         
+                                            break
                                         }
-                                    } else {
-                                        break
-                                    }        
-                                }                      
+                                    }
+                                } else {
+                                    break
+                                }        
+                            }    
+                            console.log(cells)                  
+                            break
+                        default:
+                            console.log("sas")
                             break
                     }
                 }
@@ -174,10 +177,12 @@ function match(difficulty) {
                 }
             } else {
                 pop.src = "static/music/break.ogg"
+                pop.play()
             }
         }        
     }))
 }
+
 
 
 
