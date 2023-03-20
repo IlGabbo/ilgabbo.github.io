@@ -20,7 +20,12 @@ let data = {
         background: _default_dir + "nether.png",
         settingsBackground: _default_dir + "red_nether_bricks.png",
         difficultyBox: _default_dir + "respawn_anchor.png"
-    }    
+    },
+    endTheme: {
+        background: _default_dir + "end.png",
+        settingsBackground: _default_dir + "purpur_block.png",
+        difficultyBox: _default_dir + "purpur_block.png"
+    }
 }
 
 if (localStorage.getItem("theme") == null) {
@@ -33,6 +38,9 @@ switch (localStorage.getItem("theme")) {
     case "nether":
         setTheme("nether")
         break    
+    case "end":
+        setTheme("end")
+        break
     default:
         setTheme("world")
         break
@@ -59,6 +67,15 @@ function setTheme(theme) {
             favicon.setAttribute("href", "./static/images/icon/nether.png")
             localStorage.setItem("theme", "nether")
             break;
+        case "end":
+            blurredBg.style.backgroundImage = `url(${data.endTheme.background})`
+            gameCnt.style.backgroundImage = `url(${data.endTheme.background})`
+            settings.style.backgroundImage = `url(${data.endTheme.settingsBackground})`
+            difficultyBox.style.backgroundImage = `url(${data.endTheme.difficultyBox})`
+            status.style.backgroundImage = `url(${data.endTheme.settingsBackground})`
+            favicon.setAttribute("href", "./static/images/icon/end.png")
+            localStorage.setItem("theme", "end")
+            break;
         default:
             setTheme("world")
             break;
@@ -71,4 +88,8 @@ document.querySelector(".overworld").addEventListener("click", (e) => {
 
 document.querySelector(".nether").addEventListener("click", (e) => {
     setTheme("nether")
+})
+
+document.querySelector(".end").addEventListener("click", (e) => {
+    setTheme("end")
 })
