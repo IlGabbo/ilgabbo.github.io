@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./static/css/tris.css">
-    <link rel="shortcut icon" href="static/images/favicon/minecraft.ico" type="image/x-icon">
+    <link rel="shortcut icon" id="favicon" href="static/images/favicon/minecraft.ico" type="image/x-icon">
     <title>Tic Tac Toe</title>
 </head>
 <body> 
@@ -24,6 +24,16 @@
                     <p id="volume-status">Music: 50%</p>
                     <input type="range" name="general-volume" id="general-volume" min="0" max="100" value="20">
                     <p id="general-volume-status">General Volume: 20%</p>
+                </div>
+                <div class="themes">
+                    <div class="overworld">
+                        <div>World</div>
+                        <div class="theme-icon overworld-icon"></div>
+                    </div>
+                    <div class="nether">
+                        <div>Nether</div>
+                        <div class="theme-icon nether-icon"></div>
+                    </div>
                 </div>
                 <div class="social">
                     <div class="github social-icon" onclick="window.open('https://github.com/IlGabbo')"></div>
@@ -78,5 +88,6 @@
         </div>  
     </div>       
     <script src="./static/js/js.js"></script>    
+    <script src="./Static/js/theme.js"></script>
 </body>
 </html>

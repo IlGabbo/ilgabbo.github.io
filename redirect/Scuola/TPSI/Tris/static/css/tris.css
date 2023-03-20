@@ -10,13 +10,13 @@
 }
 
 .blur {
-    background-image: url(../images/background/nether.png);
     background-position: center;
     background-size: cover;
     z-index: 1;
     width: 100%;
     height: 100vh;
     position: relative;
+    transition: all .2s;
 }
 
 .blur::before {
@@ -30,7 +30,6 @@
 .width-414 {
     width: 28.75%;
     height: 95vh;
-    background-image: url(../images/background/nether.png);
     background-position: center;
     background-size: cover;
     background-repeat: repeat-x;
@@ -47,11 +46,8 @@
     -webkit-box-shadow: 0px 0px 31px 32px rgba(0,0,0,0.75);
     -moz-box-shadow: 0px 0px 31px 32px rgba(0,0,0,0.75);
     box-shadow: 0px 0px 31px 32px rgba(0,0,0,0.75);
+    transition: all .2s;
 }
-
-/* .background-rotation {
-    animation: bg-rotation 105s linear infinite;
-} */
 
 @keyframes bg-rotation {
     from {
@@ -105,10 +101,6 @@
     background-color: transparent;
 }
 
-.sas {
-    background-color: #fff;
-}
-
 #reset {
     background-color: rgba(255, 0, 0, 0.7);
     margin-top: 15px;
@@ -139,12 +131,12 @@
     width: 50%;
     height: 300px;
     border: 3px solid #000;
-    text-align: center;
-    background-image: url(../images/background/red-nether-bricks.png);
+    text-align: center;    
     background-size: cover;
     -webkit-box-shadow: 0px 0px 14px 1px #000000; 
     box-shadow: 0px 0px 14px 1px #000000;
     position: relative;
+    transition: all .2s;
 }
 
 .settings-container {
@@ -182,15 +174,53 @@
     font-weight: 300;
 }
 
+.themes {
+    width: 100%;
+    height: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: 8%;
+}
+
+.overworld, .nether {
+    width: 40%;
+    height: 100%;
+    color: #fff;
+    text-align: center;
+    border-radius: 7px;
+    border: 2px solid rgba(255, 255, 255, 0);
+    transition: all .2s;
+}
+
+.overworld:hover, .nether:hover {  
+    border: 2px solid #fff;
+    cursor: pointer;
+}
+
+.theme-icon {
+    width: 30px;
+    height: 30px;
+    border-radius: 5px;
+    background-size: cover;
+    margin: 0 auto;
+}
+
+.overworld-icon {
+    background-image: url(../images/icon/overworld.png);
+}
+
+.nether-icon {
+    background-image: url(../images/icon/nether.png);
+}
+
 .show-hide {
     display: flex;
 }
 
 .status {
     width: 50%;
-    height: 100px;
-    
-    background-image: url(../images/background/red-nether-bricks.png);
+    height: 100px;    
     position: absolute;
     top: 50%;
     left: 50%;
@@ -255,7 +285,6 @@
     position: absolute;
     width: 50%;
     height: 300px;
-    background-image: url(../images/background/respawn-anchor.png);
     background-size: cover;
     background-position: center;
     -webkit-box-shadow: 0px 0px 16px 10px #000000; 
@@ -265,6 +294,7 @@
     justify-content: center;
     align-items: center;   
     color: #fff;
+    transition: all .2s;
 }
 
 .difficulty-selector {
@@ -328,7 +358,6 @@ table {
 
 
 /* slider */
-
 input[type=range] {
     width: 80%;
     margin: 6.65px 0;
@@ -341,7 +370,7 @@ input[type=range]:focus {
 }
 
 input[type=range]::-webkit-slider-runnable-track {
-    background-image: url(../images/background/respawn-anchor.png);
+    background-image: url(../images/background/respawn_anchor.png);
     background-size: contain;
     
     width: 100%;
@@ -361,12 +390,12 @@ input[type=range]::-webkit-slider-thumb {
 }
 
 input[type=range]:focus::-webkit-slider-runnable-track {
-    background-image: url(../images/background/respawn-anchor.png);
+    background-image: url(../images/background/respawn_anchor.png);
     background-size: contain;
 }
 
 input[type=range]::-moz-range-track {
-    background-image: url(../images/background/respawn-anchor.png);
+    background-image: url(../images/background/respawn_anchor.png);
     background-size: contain;
     
     width: 100%;
@@ -377,7 +406,7 @@ input[type=range]::-moz-range-track {
 input[type=range]::-moz-range-thumb {
     width: 13px;
     height: 26px;
-    background-image: url(../images/background/respawn-anchor.png);
+    background-image: url(../images/background/respawn_anchor.png);
     background-size: cover;    
     cursor: pointer;
 }
