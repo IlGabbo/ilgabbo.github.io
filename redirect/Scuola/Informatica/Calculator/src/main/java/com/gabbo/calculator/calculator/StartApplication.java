@@ -36,7 +36,7 @@ public class StartApplication extends Application {
             }
         });
         drag_bar.setOnMouseDragged(new EventHandler<MouseEvent>() {
-                @Override
+            @Override
             public void handle(MouseEvent mouseEvent) {
                 stage.setX(mouseEvent.getScreenX() + x);
                 stage.setY(mouseEvent.getScreenY() + y);

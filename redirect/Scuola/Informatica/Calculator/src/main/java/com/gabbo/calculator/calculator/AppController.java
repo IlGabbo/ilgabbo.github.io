@@ -8,7 +8,8 @@ import javafx.scene.control.Label;
 import javax.script.ScriptEngine;
 import javax.script.ScriptEngineManager;
 import javax.script.ScriptException;
-
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 
 public class AppController {
@@ -28,7 +29,7 @@ public class AppController {
         switch (button_id) {
             case "calc" -> {
                 if (operation != "0") {
-                    history.setText(operation);
+                    history.setText(displayed_operation);
                     result.setText("0");
                     calc(operation);
                 } else {
@@ -44,9 +45,9 @@ public class AppController {
             case "delete_button" -> {
                 if (result.getText() != "0") {
                     try {
-                        StringBuffer sb = new StringBuffer(operation);
-                        sb.deleteCharAt(sb.length() - 1);
-                        operation = sb.toString();
+                        operation = operation.substring(0, operation.length()-1);
+                        displayed_operation = displayed_operation.substring(0, displayed_operation.length()-1);
+                        result.setText(displayed_operation);
                     } catch (StringIndexOutOfBoundsException ev) {
                         System.out.println("error");
                         result.setText("0");
@@ -55,7 +56,10 @@ public class AppController {
 
             }
             case "onedividedx_button" -> {}
-            case "raisedtosecond_button" -> {}
+            case "raisedtosecond_button" -> {
+                operation += "^2";
+                displayed_operation += "²";
+            }
             case "square_button" -> {
                 operation += "√";
                 displayed_operation += "√";
@@ -66,6 +70,7 @@ public class AppController {
             }
             case "comma" -> {
                 operation += ".";
+                displayed_operation += ",";
             }
             case "multiplication_button" -> {
                 operation += "*";
@@ -86,13 +91,13 @@ public class AppController {
     }
 
     private void calc(String operation) {
-        ScriptEngineManager mgr = new ScriptEngineManager();
-        ScriptEngine engine = mgr.getEngineByName("rhino");
-        String op = "40+2";
-        try {
-            System.out.println(engine.eval(op));
-        } catch (ScriptException e) {
-            e.printStackTrace();
+        String symbols = "[+\\-*/^√]";
+        Pattern ptn = Pattern.compile((symbols));
+        Matcher m = ptn.matcher(operation);
+        if (m.find()) {
+
+        } else {
+            System.out.println("Not found");
         }
     }
 
