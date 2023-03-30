@@ -21,7 +21,7 @@ public class AppController {
 
 
     @FXML
-    private void getButtonValue(Event e) throws ScriptException {
+    private void getButtonValue(Event e) {
         Object node = e.getSource();
         Button btn = (Button) node;
         String button_text = btn.getText();
@@ -30,17 +30,16 @@ public class AppController {
             case "calc" -> {
                 if (operation != "0") {
                     history.setText(displayed_operation);
-                    result.setText("0");
-                    calc(operation);
+                    String res = calc(operation);
+                    result.setText(res);
                 } else {
                     history.setText("");
                 }
-
             }
             case "ce_button", "c_button" -> {
                 operation = "";
                 history.setText("");
-                displayed_operation = "0";
+                displayed_operation = "";
             }
             case "delete_button" -> {
                 if (result.getText() != "0") {
@@ -48,8 +47,7 @@ public class AppController {
                         operation = operation.substring(0, operation.length()-1);
                         displayed_operation = displayed_operation.substring(0, displayed_operation.length()-1);
                         result.setText(displayed_operation);
-                    } catch (StringIndexOutOfBoundsException ev) {
-                        System.out.println("error");
+                    } catch (StringIndexOutOfBoundsException err) {
                         result.setText("0");
                     }
                 }
@@ -57,11 +55,9 @@ public class AppController {
             }
             case "onedividedx_button" -> {}
             case "raisedtosecond_button" -> {
-                operation += "^2";
                 displayed_operation += "²";
             }
             case "square_button" -> {
-                operation += "√";
                 displayed_operation += "√";
             }
             case "plus_or_minus" -> {
@@ -82,7 +78,6 @@ public class AppController {
             }
         }
         result.setText(displayed_operation);
-        System.out.println(operation);
     }
 
     @FXML
@@ -90,15 +85,27 @@ public class AppController {
         System.exit(0);
     }
 
-    private void calc(String operation) {
-        String symbols = "[+\\-*/^√]";
-        Pattern ptn = Pattern.compile((symbols));
-        Matcher m = ptn.matcher(operation);
-        if (m.find()) {
-
+    private String calc(String operation) {
+        String res;
+        Pattern pow = Pattern.compile("²");
+        Pattern square = Pattern.compile("√");
+        if (pow.matcher(displayed_operation).find()) {
+            res = Double.toString(Math.pow(Double.parseDouble(operation), 2));
+            return res;
+        } else if (square.matcher(displayed_operation).find()) {
+            res = Double.toString(Math.sqrt(Double.parseDouble(operation)));
+            return res;
         } else {
-            System.out.println("Not found");
-        }
-    }
+            ScriptEngineManager scriptEngine = new ScriptEngineManager();
+            ScriptEngine engine = scriptEngine.getEngineByName("nashorn");
 
+            try {
+                res = engine.eval(operation).toString();
+            } catch (ScriptException e) {
+                e.printStackTrace();
+                res = "error";
+            }
+        }
+        return res;
+    }
 }
