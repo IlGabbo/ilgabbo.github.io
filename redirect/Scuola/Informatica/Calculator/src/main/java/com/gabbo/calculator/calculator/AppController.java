@@ -8,6 +8,7 @@ import javafx.scene.control.Label;
 import javax.script.ScriptEngine;
 import javax.script.ScriptEngineManager;
 import javax.script.ScriptException;
+import java.util.Objects;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -18,8 +19,6 @@ public class AppController {
     private String operation = "";
     private String displayed_operation = "";
 
-
-
     @FXML
     private void getButtonValue(Event e) {
         Object node = e.getSource();
@@ -28,13 +27,15 @@ public class AppController {
         String button_id = btn.getId();
         switch (button_id) {
             case "calc" -> {
-                if (operation != "0") {
+                if (!Objects.equals(operation, "0")) {
                     history.setText(displayed_operation);
-                    String res = calc(operation);
-                    result.setText(res);
+                    displayed_operation = calc(operation);
+                    operation = calc(operation);
+                    System.out.println(operation + " CALC");
                 } else {
                     history.setText("");
                 }
+                result.setText(displayed_operation);
             }
             case "ce_button", "c_button" -> {
                 operation = "";
@@ -53,9 +54,16 @@ public class AppController {
                 }
 
             }
-            case "onedividedx_button" -> {}
+            case "onedividedx_button" -> {
+                displayed_operation += "1/";
+                operation += "1/";
+            }
             case "raisedtosecond_button" -> {
                 displayed_operation += "²";
+            }
+            case "percent_button" -> {
+                operation += "%";
+                displayed_operation += "%";
             }
             case "square_button" -> {
                 displayed_operation += "√";
@@ -89,22 +97,31 @@ public class AppController {
         String res;
         Pattern pow = Pattern.compile("²");
         Pattern square = Pattern.compile("√");
+        Pattern percent = Pattern.compile("%");
         if (pow.matcher(displayed_operation).find()) {
             res = Double.toString(Math.pow(Double.parseDouble(operation), 2));
             return res;
-        } else if (square.matcher(displayed_operation).find()) {
+        }
+        if (square.matcher(displayed_operation).find()) {
             res = Double.toString(Math.sqrt(Double.parseDouble(operation)));
+            // operation += res;
             return res;
-        } else {
-            ScriptEngineManager scriptEngine = new ScriptEngineManager();
-            ScriptEngine engine = scriptEngine.getEngineByName("nashorn");
+        }
+        if (percent.matcher(operation).find()) {
+            String[] a = operation.split("%");
+            double result = (Double.parseDouble(a[0])*Double.parseDouble(a[1]))/100;
+            res = Double.toString(result);
+            return res;
+        }
 
-            try {
-                res = engine.eval(operation).toString();
-            } catch (ScriptException e) {
-                e.printStackTrace();
-                res = "error";
-            }
+        ScriptEngineManager scriptEngine = new ScriptEngineManager();
+        ScriptEngine engine = scriptEngine.getEngineByName("nashorn");
+
+        try {
+            res = engine.eval(operation).toString();
+        } catch (ScriptException e) {
+            e.printStackTrace();
+            res = "error";
         }
         return res;
     }
