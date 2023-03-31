@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.gabbo.studiodentistico.AppController">
+   <children>
+      <Label layoutX="83.0" layoutY="60.0" prefHeight="71.0" prefWidth="154.0" text="Register">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <TextField fx:id="name" layoutX="83.0" layoutY="131.0" prefHeight="25.0" prefWidth="161.0" promptText="Name" />
+      <TextField fx:id="last_name" layoutX="83.0" layoutY="175.0" prefHeight="25.0" prefWidth="161.0" promptText="Last name" />
+      <TextField fx:id="pathology" layoutX="83.0" layoutY="219.0" prefHeight="25.0" prefWidth="161.0" promptText="Your problem" />
+      <Button layoutX="83.0" layoutY="266.0" mnemonicParsing="false" text="Save" />
+      <Button layoutX="135.0" layoutY="266.0" mnemonicParsing="false" text="Reset" />
+      <Button layoutX="188.0" layoutY="266.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="56.0" text="Discard" onAction="#discard" />
+   </children>
+</AnchorPane>
