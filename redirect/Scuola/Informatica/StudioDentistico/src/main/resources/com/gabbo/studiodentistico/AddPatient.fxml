@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<Pane fx:id="status" prefHeight="768" prefWidth="1024" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.gabbo.studiodentistico.AddPatientController">
+   <children>
+      <Label layoutX="57.0" layoutY="55.0" prefHeight="7.0" prefWidth="208.0" text="Aggiungi un paziente">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+      <TextField fx:id="name" layoutX="57.0" layoutY="117.0" prefHeight="30.0" prefWidth="243.0" promptText="Nome" />
+      <TextField fx:id="surname" layoutX="57.0" layoutY="171.0" prefHeight="30.0" prefWidth="243.0" promptText="Cognome" />
+      <TextField fx:id="age" layoutX="57.0" layoutY="221.0" prefHeight="30.0" prefWidth="243.0" promptText="Età" />
+      <TextField fx:id="phonenumber" layoutX="57.0" layoutY="275.0" prefHeight="30.0" prefWidth="243.0" promptText="Numero telefonico" />
+      <Button layoutX="57.0" layoutY="336.0" mnemonicParsing="false" onAction="#savePatient" prefHeight="37.0" prefWidth="70.0" text="Salva" />
+      <Button layoutX="143.0" layoutY="336.0" mnemonicParsing="false" onAction="#resetFields" prefHeight="37.0" prefWidth="70.0" text="Reset" />
+      <Button layoutX="230.0" layoutY="336.0" mnemonicParsing="false" onAction="#back" prefHeight="37.0" prefWidth="70.0" text="Indietro" wrapText="true" />
+      <TextArea fx:id="pathology" layoutX="320.0" layoutY="117.0" prefHeight="188.0" prefWidth="200.0" promptText="Patologia" />
+      <Label fx:id="result" layoutX="320.0" layoutY="336.0" prefHeight="37.0" prefWidth="200.0">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Label>
+   </children>
+</Pane>

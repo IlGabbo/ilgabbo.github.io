@@ -3,21 +3,23 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" fx:controller="com.gabbo.studiodentistico.AppController" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
+
+<Pane prefHeight="768" prefWidth="1024" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.gabbo.studiodentistico.MainController">
    <children>
-      <MenuBar layoutY="1.0" prefHeight="27.0" prefWidth="241.0">
+      <MenuBar fx:id="menubar" prefHeight="25.0" prefWidth="1024.0">
         <menus>
-          <Menu mnemonicParsing="false" text="Segreteria">
+          <Menu mnemonicParsing="false" text="File">
             <items>
-              <MenuItem mnemonicParsing="false" text="Registrazione" onAction="#openRegisterForm"/>
+              <MenuItem mnemonicParsing="false" text="Close" />
             </items>
           </Menu>
-          <Menu mnemonicParsing="false" text="Ambulatorio">
+          <Menu mnemonicParsing="false" text="Studio">
             <items>
-              <MenuItem mnemonicParsing="false" text="Delete" />
+              <MenuItem fx:id="AddPatient" onAction="#switchScene" text="Aggiungi paziente" />
+                <MenuItem mnemonicParsing="false" onAction="#getPatients" text="Visualizza pazienti" />
             </items>
           </Menu>
-          <Menu mnemonicParsing="false" text="Chi siamo">
+          <Menu mnemonicParsing="false" text="Help">
             <items>
               <MenuItem mnemonicParsing="false" text="About" />
             </items>
