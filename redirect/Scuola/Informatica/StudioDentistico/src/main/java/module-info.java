@@ -7,6 +7,7 @@ module com.gabbo.studiodentistico {
     requires org.kordamp.bootstrapfx.core;
     requires java.security.jgss;
     requires org.json;
+    requires java.sql;
 
     opens com.gabbo.studiodentistico to javafx.fxml;
     exports com.gabbo.studiodentistico;

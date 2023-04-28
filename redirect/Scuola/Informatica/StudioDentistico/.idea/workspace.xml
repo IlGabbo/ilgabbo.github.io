@@ -5,20 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b61c445b-2d13-4f65-b817-8ae20f1c58e1" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/../StudioDentistico.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mvnw" beforeDir="false" afterPath="$PROJECT_DIR$/mvnw" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mvnw.cmd" beforeDir="false" afterPath="$PROJECT_DIR$/mvnw.cmd" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/gabbo/studiodentistico/Actions.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gabbo/studiodentistico/AppController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gabbo/studiodentistico/Register.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gabbo/studiodentistico/StartApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gabbo/studiodentistico/AddPatientController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gabbo/studiodentistico/AddPatientController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gabbo/studiodentistico/AppStartup.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gabbo/studiodentistico/AppStartup.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gabbo/studiodentistico/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gabbo/studiodentistico/MainController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/gabbo/studiodentistico/AddPatient.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/gabbo/studiodentistico/AddPatient.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/gabbo/studiodentistico/MainWindow.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/gabbo/studiodentistico/MainWindow.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/gabbo/studiodentistico/Register.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sqlite/sqlite-jdbc-3.40.0.0.jar" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/sqlite/sqlite-jdbc-3.40.0.0.jar" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,22 +51,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/manci/Desktop/Git Projects/ilgabbo.github.io/redirect/Scuola/Informatica/StudioDentistico/src/sqlite/sqlite-jdbc-3.40.0.0.jar&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.4413793&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/Users/manci/Desktop/Git/ilgabbo.github.io/redirect/Scuola/Informatica/StudioDentistico/src/main/sqlite/sqlite-jdbc-3.40.0.0.jar",
+    "project.structure.last.edited": "Libraries",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.4413793"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\manci\Desktop\Git Projects\ilgabbo.github.io\redirect\Scuola\Informatica\StudioDentistico\src" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\manci\Desktop\Git\ilgabbo.github.io\redirect\Scuola\Informatica\StudioDentistico\src\main" />
       <recent name="C:\Users\manci\Desktop\Git Projects\ilgabbo.github.io\redirect\Scuola\Informatica\StudioDentistico\src\main\java" />
       <recent name="C:\Users\manci\Desktop\Git Projects\ilgabbo.github.io\redirect\Scuola\Informatica\StudioDentistico\src\main\java\com\gabbo\studiodentistico" />
     </key>
@@ -96,6 +96,8 @@
       <workItem from="1682616636407" duration="74000" />
       <workItem from="1682616742352" duration="2483000" />
       <workItem from="1682619250317" duration="2088000" />
+      <workItem from="1682663903839" duration="3946000" />
+      <workItem from="1682673474896" duration="6046000" />
     </task>
     <servers />
   </component>

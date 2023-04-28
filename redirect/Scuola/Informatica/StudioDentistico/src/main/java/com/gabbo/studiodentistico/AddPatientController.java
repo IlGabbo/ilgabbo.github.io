@@ -22,7 +22,7 @@ public class AddPatientController {
     @FXML
     private Label result;
 
-    private Actions action = new Actions();
+    private Sql action = new Sql();
 
     private Stage addPatientStage;
     private Scene addPatientScene;
@@ -47,11 +47,11 @@ public class AddPatientController {
                 result.setText("Errore");
                 result.setTextFill(Color.RED);
             }
+            resetFields();
         } else {
             result.setText("Inserisci un'età valida");
             result.setTextFill(Color.RED);
         }
-        resetFields();
     }
 
     @FXML
