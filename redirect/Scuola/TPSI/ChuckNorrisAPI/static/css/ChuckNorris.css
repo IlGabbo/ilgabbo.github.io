@@ -1,0 +1,168 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Concert One', cursive;
+}
+
+iphone-14-pro-max {
+    width: 430px;
+    height: 932px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #F0F0C9;
+}
+
+chuck-norris-title {
+    display: block;
+    width: 84.65%;
+    margin-top: 33px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    font-size: 52px;
+    color: #D8572A;
+    -webkit-text-stroke: 1px #000;
+    position: relative;
+}
+
+chuck-norris-title::after {
+    content: "";
+    position: absolute;
+    bottom: -20px;
+    right: -15px;
+    width: 111px;
+    height: 92px;
+    background-image: url(/static/images/uzi.png);
+}
+
+chuck-norris-joke {
+    display: block;
+    width: 84.65%;
+    height: 113px;
+    background-color: #E1E1E1;
+    border-radius: 20px;
+    display: grid;
+    place-content: center;
+    margin-top: 129px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 19px;
+}
+
+chuck-norris-gif {
+    display: block;
+    width: 104px;
+    height: 124px;
+    margin-top: 54px;
+    margin-left: auto;
+    margin-right: auto;
+    background-position: center;
+    background-size: cover;
+}
+
+chuck-norris-jokegenre {
+    display: block;
+    width: 84.65%;    
+    margin: 0 auto;
+}
+
+chuck-norris-jokegenre select {
+    width: 100%;
+    height: 28px;
+    border-radius: 10px;
+    text-align: center;
+    border: none;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+.get-joke {
+    background-color: #780116;
+    color: #fff;
+    border: none;
+    display: block;
+    width: 84.65%; 
+    height: 48px;
+    border-radius: 7px;
+    display: grid;
+    place-content: center;
+    margin-top: 156px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+chuck-norris-copyjoke {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 185px;
+    height: 33px;
+    background-color: #D8572A;
+    color: #fff;
+    font-size: 16px;
+    margin-top: 18px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 7px;
+    position: relative;
+}
+
+chuck-norris-copyjoke::after {
+    content: "";
+    position: absolute;
+    right: 9px;
+    width: 15px;
+    height: 15px;
+    background-image: url(../images/copy.png);
+    background-size: cover;
+}
+
+.get-joke:hover, chuck-norris-copyjoke:hover {
+    cursor: pointer;
+}
+
+.get-joke:active, chuck-norris-copyjoke:active {
+    -webkit-box-shadow: inset 5px 5px 15px -6px #000000; 
+    box-shadow: inset 5px 5px 15px -6px #000000;
+}
+
+.get-joke:active {
+    background-color: #570010;
+}
+
+chuck-norris-copyjoke:active {
+    background-color: #b1461f;
+}
+
+p {
+    overflow: auto;
+}
+
+p, a {
+    text-align: center;
+}
+
+
+/* ===== Scrollbar CSS ===== */
+/* Firefox */
+* {
+    scrollbar-width: auto;
+    scrollbar-color: #ffffff #e1e1e1;
+}
+
+/* Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+    width: 8px;
+}
+
+*::-webkit-scrollbar-track {
+    background: #e1e1e1;
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: #ffffff;
+    border-radius: 10px;
+    border: 3px solid #ffffff;
+}
