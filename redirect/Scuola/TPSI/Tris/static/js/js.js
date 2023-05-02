@@ -23,6 +23,7 @@ let is_x_written = false
 let isPlayingThePlayer = true 
 let isThereAWinner = false  
 let difficulty;
+let sharedUrl = (window.location.href + "multiplayer/").replace("index.html", "")
 music.loop = true      
 
 
@@ -67,6 +68,18 @@ function openSinglePlayer() {
         }
         match()
     })   
+}
+
+function onlineMp() {
+    mainWindow.style.display = "none"
+    document.getElementById('game').style.display = 'flex'
+    document.querySelector(".share-link-cnt").classList.add("share-overlay")
+    fetch("http://localhost:1234/multiplayer")
+    .then(data => {return data.json()})
+    .then(match => {
+        sharedUrl += match.match
+        console.log(match)
+    })
 }
 
 function checkVictory(cells) {
@@ -172,7 +185,7 @@ function match() {
                     win.play()
                 } else if (count == 9) {
                     document.querySelector("#status").style.display = "flex"
-                    document.querySelector(".winner").innerHTML = "Drawing"
+                    document.querySelector(".winner").innerHTML = "Draw"
                     pop.src = "static/music/break.ogg"
                 }
             } else {
@@ -184,7 +197,10 @@ function match() {
 }
 
 
-
+document.querySelector("#copyurl").addEventListener("click", (e) => {
+    navigator.clipboard.writeText(sharedUrl)
+    e.currentTarget.innerHTML = "Copied"
+})
 
 music_volume_slide.addEventListener("input", (e) => {
     music.volume = e.currentTarget.value/100

@@ -5,6 +5,7 @@ let slider = document.querySelector("input[type=range]")
 let sliderThumb = document.querySelector("input[type=range]")
 let difficultyBox = document.querySelector(".difficulty")
 let status = document.querySelector(".status")
+let shareLink = document.querySelector(".share-link")
 
 let favicon = document.querySelector("#favicon")
 
@@ -55,6 +56,7 @@ function setTheme(theme) {
             difficultyBox.style.backgroundImage = `url(${data.overworldTheme.difficultyBox})`
             status.style.backgroundImage = `url(${data.overworldTheme.settingsBackground})`
             status.style.border = "1px solid #000"
+            shareLink.style.backgroundImage = `url(${data.overworldTheme.settingsBackground})`
             favicon.setAttribute("href", "./static/images/icon/overworld.png")
             localStorage.setItem("theme", "world")
             break;
@@ -64,6 +66,7 @@ function setTheme(theme) {
             settings.style.backgroundImage = `url(${data.netherTheme.settingsBackground})`
             difficultyBox.style.backgroundImage = `url(${data.netherTheme.difficultyBox})`
             status.style.backgroundImage = `url(${data.netherTheme.settingsBackground})`
+            shareLink.style.backgroundImage = `url(${data.netherTheme.settingsBackground})`
             favicon.setAttribute("href", "./static/images/icon/nether.png")
             localStorage.setItem("theme", "nether")
             break;
@@ -73,6 +76,7 @@ function setTheme(theme) {
             settings.style.backgroundImage = `url(${data.endTheme.settingsBackground})`
             difficultyBox.style.backgroundImage = `url(${data.endTheme.difficultyBox})`
             status.style.backgroundImage = `url(${data.endTheme.settingsBackground})`
+            shareLink.style.backgroundImage = `url(${data.endTheme.settingsBackground})`
             favicon.setAttribute("href", "./static/images/icon/end.png")
             localStorage.setItem("theme", "end")
             break;

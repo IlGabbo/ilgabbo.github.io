@@ -223,14 +223,13 @@
     display: flex;
 }
 
-.status {
+.status, .share-link {
     width: 50%;
     height: 100px;    
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    display: none;
     flex-direction: column;
     align-items: center;
     justify-content: center;
@@ -238,6 +237,14 @@
     box-shadow: 0px 0px 14px 1px #fff;
     color: #fff;
     z-index: 90;
+}
+
+.share-link {
+    display: flex;
+}
+
+.status {
+    display: none;
 }
 
 .status div:first-child {
@@ -364,7 +371,20 @@ table {
     box-shadow: 1px 1px 9px 4px rgba(0,0,0,0.89);
 }
 
+.share-link-cnt {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    display: none;
+}
 
+.share-overlay {
+    display: block;
+    z-index: 1;
+}
 
 /* slider */
 input[type=range] {
