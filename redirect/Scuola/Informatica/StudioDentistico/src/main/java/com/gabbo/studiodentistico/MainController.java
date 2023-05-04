@@ -18,7 +18,6 @@ public class MainController {
     private Stage addPatientStage;
     private Scene addPatientScene;
     private Parent root;
-    private Sql sql = new Sql();
     private ComboBox comboBox;
     @FXML
     private Pane mainWindow;
@@ -28,7 +27,6 @@ public class MainController {
 
     @FXML
     private void switchScene(ActionEvent ev) throws IOException {
-        sql.connectToDb();
         root = FXMLLoader.load(getClass().getResource("AddPatient.fxml"));
         addPatientStage = (Stage) menubar.getScene().getWindow();
         addPatientScene = new Scene(root);
@@ -40,23 +38,17 @@ public class MainController {
 
     @FXML
     private void getPatients() {
-        JSONArray array = sql.readDb();
         mainWindow.getChildren().clear();
         double y = 0;
-        for (int i = 0; i < array.length(); i++) {
-            if (y == 0) {
-                y = 50;
-            } else {
-                y += 35;
-            }
 
-            comboBox = new ComboBox();  // to add multiple items in a single combo box
-            comboBox.setPrefWidth(120);
-            comboBox.setPrefHeight(30);
-            comboBox.setLayoutX(30);
-            comboBox.setLayoutY(y);
-            mainWindow.getChildren().add(comboBox);
-        }
+
+        comboBox = new ComboBox();  // to add multiple items in a single combo box
+        comboBox.setPrefWidth(120);
+        comboBox.setPrefHeight(30);
+        comboBox.setLayoutX(30);
+        comboBox.setLayoutY(y);
+        mainWindow.getChildren().add(comboBox);
+
 
         // System.out.println(sql.readDb());
     }
