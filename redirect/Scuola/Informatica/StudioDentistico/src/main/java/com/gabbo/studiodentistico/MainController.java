@@ -10,7 +10,6 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.MenuBar;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
-import org.json.JSONArray;
 
 import java.io.IOException;
 
@@ -23,6 +22,7 @@ public class MainController {
     private Pane mainWindow;
     @FXML
     private MenuBar menubar;
+    private FileManager file = new FileManager("file.json");
 
 
     @FXML
@@ -40,7 +40,7 @@ public class MainController {
     private void getPatients() {
         mainWindow.getChildren().clear();
         double y = 0;
-
+        file.manage("r", null);
 
         comboBox = new ComboBox();  // to add multiple items in a single combo box
         comboBox.setPrefWidth(120);
@@ -48,8 +48,5 @@ public class MainController {
         comboBox.setLayoutX(30);
         comboBox.setLayoutY(y);
         mainWindow.getChildren().add(comboBox);
-
-
-        // System.out.println(sql.readDb());
     }
 }

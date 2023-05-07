@@ -11,7 +11,10 @@ import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
-import org.json.JSONObject;
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
+
 import java.io.IOException;
 
 public class AddPatientController {
@@ -26,6 +29,7 @@ public class AddPatientController {
     private Stage addPatientStage;
     private Scene addPatientScene;
     private Parent root;
+    private JSONArray jsonArray = new JSONArray();
 
     private boolean isNumber(String number) {
         try {
@@ -38,7 +42,9 @@ public class AddPatientController {
 
     @FXML
     private void savePatient() {
-        FileManager sas = new FileManager("file.json");
+        FileManager file = new FileManager("file.json");
+        System.out.println(file.manage("r", null));
+        jsonArray = file.manage("r", null);
         if (isNumber(age.getText())) {
             JSONObject json = new JSONObject();
             json.put("name", name.getText());
@@ -46,7 +52,8 @@ public class AddPatientController {
             json.put("age", age.getText());
             json.put("phonenumber", phonenumber.getText());
             json.put("pathology", pathology.getText());
-            sas.manage("r", json);
+            jsonArray.add(json);
+            file.manage("w", jsonArray);
             resetFields();
         } else {
             result.setText("Inserisci un'età valida");
