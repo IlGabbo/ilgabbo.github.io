@@ -4,6 +4,9 @@ import java.io.*;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
+import javafx.collections.FXCollections;
+import javafx.scene.control.ComboBox;
+import javafx.scene.layout.Pane;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
@@ -15,6 +18,7 @@ public class FileManager {
     public FileManager(String filename) {
         this.filename = filename;
     }
+    private ComboBox comboBox;
 
     public JSONArray manage(String openmode, JSONArray content) {
         JSONArray status = new JSONArray();
@@ -68,5 +72,37 @@ public class FileManager {
         }
 
         return status;
+    }
+
+    public boolean printPatients(Pane mainWindow) {
+        mainWindow.getChildren().clear();
+        int y = 10;
+        JSONArray data = manage("r", null);
+        for (int i = 0; i < data.size(); i++) {
+            JSONObject obj = (JSONObject) data.get(i);
+            if (obj.get("status") != null) {
+                return false;
+            }
+            comboBox = new ComboBox();  // to add multiple items in a single combo box
+            comboBox.setId(String.valueOf(i));
+            comboBox.setPrefWidth(150);
+            comboBox.setPrefHeight(30);
+            comboBox.setLayoutX(30);
+            comboBox.setLayoutY(y);
+            for (int j = 0; j < obj.size(); j++) {
+                comboBox.setItems(FXCollections.observableArrayList(
+                        "Name: " + obj.get("name"),
+                        "Surname: " + obj.get("surname"),
+                        "Age: " + obj.get("age"),
+                        "Phonenumber: " + obj.get("phonenumber"),
+                        "Pathology: " + obj.get("pathology")
+                ));
+            }
+            comboBox.getSelectionModel().select(0);
+            comboBox.setContextMenu(new RemovePatient(comboBox, mainWindow));
+            mainWindow.getChildren().add(comboBox);
+            y += 40;
+        }
+        return true;
     }
 }

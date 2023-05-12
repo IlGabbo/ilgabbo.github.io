@@ -53,8 +53,16 @@ public class AddPatientController {
             json.put("phonenumber", phonenumber.getText());
             json.put("pathology", pathology.getText());
             jsonArray.add(json);
-            file.manage("w", jsonArray);
-            resetFields();
+            JSONArray arr =  file.manage("w", jsonArray);
+            JSONObject obj = (JSONObject) arr.get(0);
+            if (obj.get("status").equals("SuccessfullyWritten")) {
+                result.setText("Paziente salvato");
+                result.setTextFill(Color.GREEN);
+                resetFields();
+            } else {
+                result.setText("Errore nella scrittura");
+                result.setTextFill(Color.GREEN);
+            }
         } else {
             result.setText("Inserisci un'età valida");
             result.setTextFill(Color.RED);
