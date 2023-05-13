@@ -1,0 +1,93 @@
+[
+    {
+        "question": "What is your favourite color",
+        "for": "FavouriteColor",
+        "answer": [
+            {"answer": "red", "score": 10},
+            {"answer": "yellow", "score": 5},
+            {"answer": "white", "score": 7}
+        ]
+    },
+    {
+        "question": "Do you like banana",
+        "for": "LikeBanana",
+        "answer": [
+            {"answer": "bananaaa", "score": 8},
+            {"answer": "no", "score": 4},
+            {"answer": "maybe", "score": 6}
+        ]
+    },
+    {
+        "question": "Would you like to work as web developer",
+        "for": "WebDeveloper",
+        "answer": [
+            {"answer": "yes", "score": 8},
+            {"answer": "no", "score": 8},
+            {"answer": "maybe", "score": 6}
+        ]
+    },
+    {
+        "question": "How are you",
+        "for": "HowAreYou",
+        "answer": [
+            {"answer": "McFlurry ty", "score": 10},
+            {"answer": "i dont know", "score": 10},
+            {"answer": "bruh", "score": 6}
+        ]
+    },
+    {
+        "question": "Do you like ice cream?",
+        "for": "IceCream",
+        "answer": [
+            {"answer": "yes", "score": 10},
+            {"answer": "no", "score": 1},
+            {"answer": "there is better", "score": -104}
+        ]
+    },
+    {
+        "question": "What drink do you like?",
+        "for": "Drink",
+        "answer": [
+            {"answer": "cola", "score": 8},
+            {"answer": "fanta", "score": 7},
+            {"answer": "sprite", "score": 6}
+        ]
+    },
+    {
+        "question": "Which herb do you like?",
+        "for": "HerbYouLike",
+        "answer": [
+            {"answer": "agrostis", "score": 8},
+            {"answer": "cynodon", "score": 6},
+            {"answer": "coca", "score": 15}
+        ]
+    },
+    {
+        "question": "Which games do you like?",
+        "for": "GamesYouLike",
+        "answer": [
+            {"answer": "minecraft", "score": 15},
+            {"answer": "call of duty", "score": 12},
+            {"answer": "cs:go", "score": 10},
+            {"answer": "roblox", "score": -104}
+        ]
+    },
+    {
+        "question": "Do you like potato?",
+        "for": "LikePotato",
+        "answer": [
+            {"answer": "yes", "score": 15},
+            {"answer": "no", "score": 11},
+            {"answer": "maybe", "score": 5}
+        ]
+    },
+    {
+        "question": "Which spices do you like?",
+        "for": "SpicesYouLike",
+        "answer": [
+            {"answer": "rosemary", "score": 10},
+            {"answer": "sage", "score": 12},
+            {"answer": "marij", "score": 5}
+        ]
+    }
+]

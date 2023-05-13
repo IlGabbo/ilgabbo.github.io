@@ -1,0 +1,149 @@
+.main {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.box-centered {
+    width: 50%;
+    height: 350px;
+    border: 10px solid #1f1f1f;
+    border-radius: 10px;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.questions-box {
+    width: 90%;
+    height: 90%;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    overflow: hidden;
+}
+
+h3 {
+    color: #fff;
+}
+
+label {
+    color: #bb86fc;
+    margin-left: 10px;
+}
+
+.question {
+    width: 100%;
+    height: 100%;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: left;  
+    opacity: 1;
+    position: relative;
+}
+
+.title {
+    position: absolute;
+    top: 0;
+}
+
+.hide-question {
+    animation: hide .1s linear;
+}
+
+@keyframes hide {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+.answer {
+    text-align: left;
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.submit-answers {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.submit-answers button {
+    width: 20%;
+    height: 20%;
+    border-radius: 30px;
+    border: none;
+    background-color: #bb86fc;
+    color: #fff;
+    font-weight: bold;
+    transition: all .1s;
+    position: relative;
+}
+
+.submit-answers button:hover {
+    cursor: pointer;
+}
+
+.submit-answers button:active {
+    -webkit-box-shadow: inset 5px 5px 18px 0px #7F67FC; 
+    box-shadow: inset 5px 5px 18px 0px #7F67FC;
+}
+
+.submit-answers button::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 30px;
+    transition: all .1s;
+}
+
+.submit-answers button:active::after {
+    -webkit-box-shadow: 0px 0px 27px 8px #BB86FC; 
+    box-shadow: 0px 0px 27px 8px #BB86FC;
+}
+
+.whichfoodare {
+    width: 100%;
+    height: 100%;
+    background-color: #121212;
+    position: absolute;
+    left: 0;
+    top: -100%;
+    z-index: 1;
+    color: #fff;
+    transition: all .2s;
+}
+
+.showwhich {
+    top: 0;
+}
+
+.which-centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.image {
+    width: 120px;
+    height: 120px;
+    margin: 10px auto;
+    background-size: contain;
+}
