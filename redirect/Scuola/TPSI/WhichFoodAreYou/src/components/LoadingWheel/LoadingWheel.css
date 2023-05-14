@@ -1,0 +1,71 @@
+.loading-wheel {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #121212;
+    display: inline-grid;
+    place-content: center;
+    place-items: center;
+    color: #fff;
+}
+
+h2 {
+    margin-bottom: 10px;
+}
+
+.circle {
+    width: 80px;
+    height: 80px;
+    border-radius: 100%;
+    background-color: #fff;
+    position: relative;
+    animation: rotate 3s linear infinite;
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.circle::after {
+    content: "";
+    display: block;
+    width: 50%;
+    height: 50%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #7F67FC;
+    border-top-left-radius: 100%;
+}
+
+.circle::before {
+    content: "";
+    display: block;
+    width: 50%;
+    height: 50%;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background-color: #7F67FC;
+    border-bottom-right-radius: 100%;
+}
+
+
+.circle-centered {
+    width: 90%;
+    height: 90%;
+    border-radius: 100%;
+    background-color: #121212;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+}

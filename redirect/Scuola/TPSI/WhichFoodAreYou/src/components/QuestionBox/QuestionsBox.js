@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react"
+import LoadingWheel from "../LoadingWheel/LoadingWheel"
 import "./QuestionsBox.css"
 
 
@@ -6,17 +7,43 @@ export default function QuestionsBox() {
     const [items, setItems] = useState([])
     const [whoYouAre, setWhoYouAre] = useState("")
     const [score, setScore] = useState()
-    const [image, setImage] = useState(null)
+    const [image, setImage] = useState()
     const [visibility, setVisibility] = useState("")
+    const [content, setContent] = useState()
     
     useEffect(() => {
         const getQuestions = async () => {
             const data = await(
-                await fetch("http://localhost:8080/questions")
+                setContent(<LoadingWheel/>),
+                await fetch("/questions")
             ).json()
             setItems(data)
         }
-        getQuestions()                
+        getQuestions().then(data => {
+            setContent(
+                <button onClick={() => {
+                    let answers = []
+                    document.querySelectorAll("input[type=radio]").forEach(input => {
+                        if (input.checked) {
+                            answers.push({ answer: input.parentNode.querySelector("label").textContent, for: input.parentNode.querySelector("label").getAttribute("for") })
+                        }
+                    })
+                    console.log(answers)
+                    fetch("/whichfood?answers=" + encodeURIComponent(JSON.stringify(answers)))
+                        .then(promise => { return promise.json() })
+                        .then(data => {
+                            console.log(data)
+                            setWhoYouAre(data.whoyouare)
+                            setScore(data.score)
+                            setImage(data.imagesrc)
+                            setVisibility("showwhich")
+                        })
+                }}>
+                    Submit
+                </button> 
+            )
+        }).catch(err => {
+            setContent("Error while fetching data")})
     }, [])
 
     return (
@@ -33,10 +60,10 @@ export default function QuestionsBox() {
                     {
                         items.map((item, key) => { 
                             return(                        
-                            <div key={key} className={"question"}>
-                                <div className="title">
-                                    <h3>{item.question}</h3>
-                                </div>
+                                <div key={key} className={"question"}>
+                                    <div className="title">
+                                        <h3>{item.question}</h3>
+                                    </div>
                                 {
                                     item.answer.map((answer, key) => (
                                         <div key={key} className="answer">
@@ -49,30 +76,11 @@ export default function QuestionsBox() {
                                         </div>
                                     ))
                                 }
-                            </div>                        
+                            </div>
                         )})
                     }           
                     <div className="submit-answers">
-                        <button onClick={() => {
-                            let answers = []
-                            document.querySelectorAll("input[type=radio]").forEach(input => {
-                                if (input.checked) {
-                                    answers.push({answer: input.parentNode.querySelector("label").textContent, for: input.parentNode.querySelector("label").getAttribute("for")})
-                                }
-                            })
-                            console.log(answers)
-                            fetch("http://localhost:8080/whichfood?answers=" + encodeURIComponent(JSON.stringify(answers)))
-                            .then(promise => {return promise.json()})
-                            .then(data => {
-                                console.log(data)
-                                setWhoYouAre(data.whoyouare)
-                                setScore(data.score)
-                                setImage(data.imagesrc)   
-                                setVisibility("showwhich")                            
-                            })
-                        }}>
-                            Submit
-                        </button>    
+                           {content}
                     </div>     
                 </div>
             </div>

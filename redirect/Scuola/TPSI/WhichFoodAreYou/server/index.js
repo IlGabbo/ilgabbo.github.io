@@ -7,6 +7,7 @@ const app = express()
 const PORT = 8080
 
 app.use(cors())
+app.use(express.static("build"))
 app.listen(PORT, () => {console.log("Server started")})
 
 const content = JSON.parse(fs.readFileSync(path.join(__dirname, "json.json")).toString())
