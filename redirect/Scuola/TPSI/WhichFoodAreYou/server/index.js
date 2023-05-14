@@ -24,6 +24,7 @@ app.get("/questions", (req, res) => {
             done--
         }
     }
+    chosenQuestions.forEach(question => question.answer.sort(() => Math.random() - 0.5))
     res.send(chosenQuestions)
     chosenQuestions = []
     chosenIndexess = []
