@@ -89,5 +89,14 @@
             {"answer": "sage", "score": 12},
             {"answer": "marij", "score": 5}
         ]
+    },
+    {
+        "question": "Kiwi is:",
+        "for": "KiwiIs",
+        "answer": [
+            {"answer": "a fruit", "score": 7},
+            {"answer": "a bird", "score": 7},
+            {"answer": "mmmmmh", "score": 10}
+        ]
     }
 ]
