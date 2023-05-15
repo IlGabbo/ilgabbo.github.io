@@ -148,3 +148,20 @@ label {
     margin: 10px auto;
     background-size: contain;
 }
+
+.back {
+    width: 40%;
+    height: 40px;
+    background-color: #7F67FC;
+    border: none;
+    border-radius: 5px;
+}
+
+.back:hover {
+    cursor: pointer;
+}
+
+.back:active {
+    outline: 2px solid #7F67FC;
+    outline-offset: 2px;
+}

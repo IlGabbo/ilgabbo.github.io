@@ -63,7 +63,7 @@
         ]
     },
     {
-        "question": "Which games do you like?",
+        "question": "Which game do you like?",
         "for": "GamesYouLike",
         "answer": [
             {"answer": "minecraft", "score": 15},
@@ -82,7 +82,7 @@
         ]
     },
     {
-        "question": "Which spices do you like?",
+        "question": "Which spice do you like?",
         "for": "SpicesYouLike",
         "answer": [
             {"answer": "rosemary", "score": 10},

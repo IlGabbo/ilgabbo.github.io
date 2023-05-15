@@ -2,6 +2,7 @@ import { useEffect, useState } from "react"
 import LoadingWheel from "../LoadingWheel/LoadingWheel"
 import "./QuestionsBox.css"
 
+let url = "http://localhost:8081"  // development testing only
 
 export default function QuestionsBox() {
     const [items, setItems] = useState([])
@@ -53,6 +54,9 @@ export default function QuestionsBox() {
                     <h1>{whoYouAre}</h1>
                     <p>{score}</p>
                     <div className="image" style={{backgroundImage: `url(${image})`}}></div>
+                    <div>
+                        <button className="back" onClick={() => {window.location.reload()}}>Back</button>
+                    </div>
                 </div>                
             </div>
             <div className="box-centered">

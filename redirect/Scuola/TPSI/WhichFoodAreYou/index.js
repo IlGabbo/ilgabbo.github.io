@@ -4,10 +4,10 @@ const path = require("path")
 const fs = require("fs")
 const app = express()
 
-const PORT = 8080
+const PORT = 8081
 
 app.use(cors())
-app.use(express.static("build"))
+app.use(express.static(__dirname + "/build"))
 app.listen(PORT, () => {console.log("Server started")})
 
 const content = JSON.parse(fs.readFileSync(path.join(__dirname, "json.json")).toString())
@@ -49,7 +49,8 @@ app.get("/whichfood", (req, res) => {
     let whoYouAre = ""
     let imagesrc = ""
     if (score < 20) {
-        whoYouAre = "You are a shit"
+        whoYouAre = "You are a giglo"
+        imagesrc = "images/giglo.gif"
     } else if (score > 20 && score < 40) {
         whoYouAre = "You are a pizza"
         imagesrc = "images/pizza.png"
@@ -75,3 +76,7 @@ app.get("/images/pasta.jpg", (req, res) => {
 app.get("/images/nigiri.png", (req, res) => {
     res.sendFile("images/nigiri.png", {root: __dirname})
 }) 
+
+app.get("/images/giglo.gif", (req, res) => {
+    res.sendFile("images/giglo.gif", {root: __dirname})
+})
