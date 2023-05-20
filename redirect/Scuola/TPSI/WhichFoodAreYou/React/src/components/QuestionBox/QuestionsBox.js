@@ -6,10 +6,10 @@ let url = "http://localhost:8081"  // development testing only
 
 export default function QuestionsBox() {
     const [items, setItems] = useState([])
-    const [whoYouAre, setWhoYouAre] = useState("")
+    const [whoYouAre, setWhoYouAre] = useState()
     const [score, setScore] = useState()
     const [image, setImage] = useState()
-    const [visibility, setVisibility] = useState("")
+    const [visibility, setVisibility] = useState()
     const [content, setContent] = useState()
     
     useEffect(() => {
@@ -48,8 +48,9 @@ export default function QuestionsBox() {
     }, [])
 
     return (
-        <div className="main">
-            <div className={"whichfoodare" + ` ${visibility}`}>
+        <div className="main">      
+            <h1>Which food are You?</h1>      
+            <div className={"whichfoodare" + ` ${visibility}`}>            
                 <div className="which-centered">
                     <h1>{whoYouAre}</h1>
                     <p>{score}</p>
@@ -59,8 +60,8 @@ export default function QuestionsBox() {
                     </div>
                 </div>                
             </div>
-            <div className="box-centered">
-                <div className="questions-box">
+            <div className="box-centered">                
+                <div className="questions-box">                    
                     {
                         items.map((item, key) => { 
                             return(                        
@@ -71,8 +72,8 @@ export default function QuestionsBox() {
                                 {
                                     item.answer.map((answer, key) => (
                                         <div key={key} className="answer">
-                                            <input type="radio" onChange={(e) => {
-                                                let parent = e.target.parentNode.parentNode
+                                            <input type="radio" id={item.for} onChange={(e) => {
+                                                const parent = e.target.parentNode.parentNode
                                                 parent.classList.add("hide-question")
                                                 parent.onanimationend = () => {parent.style.display = "none"}
                                             }}/>

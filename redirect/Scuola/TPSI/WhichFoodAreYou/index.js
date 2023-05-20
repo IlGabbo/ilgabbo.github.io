@@ -12,7 +12,7 @@ app.listen(PORT, () => {console.log("Server started")})
 
 const content = JSON.parse(fs.readFileSync(path.join(__dirname, "json.json")).toString())
 
-app.get("/questions", (req, res) => {    
+app.get("/questions", (req, res) => {
     let done = 6
     let chosenQuestions = []
     let chosenIndexess = []
