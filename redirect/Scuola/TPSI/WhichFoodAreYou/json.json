@@ -3,100 +3,100 @@
         "question": "What is your favourite color",
         "for": "FavouriteColor",
         "answer": [
-            {"answer": "red", "score": 10},
-            {"answer": "yellow", "score": 5},
-            {"answer": "white", "score": 7}
+            {"answer": "red", "score": 10, "for": "red"},
+            {"answer": "yellow", "score": 5, "for": "yellow"},
+            {"answer": "white", "score": 7, "for": "white"}
         ]
     },
     {
         "question": "Do you like banana",
         "for": "LikeBanana",
         "answer": [
-            {"answer": "bananaaa", "score": 8},
-            {"answer": "no", "score": 4},
-            {"answer": "maybe", "score": 6}
+            {"answer": "bananaaa", "score": 8, "for": "bananaaa"},
+            {"answer": "no", "score": 4, "for": "banana_no"},
+            {"answer": "maybe", "score": 6, "for": "banana_maybe"}
         ]
     },
     {
         "question": "Would you like to work as web developer",
         "for": "WebDeveloper",
         "answer": [
-            {"answer": "yes", "score": 8},
-            {"answer": "no", "score": 8},
-            {"answer": "maybe", "score": 6}
+            {"answer": "yes", "score": 8, "for": "webdev_yes"},
+            {"answer": "no", "score": 8, "for": "webdev_no"},
+            {"answer": "maybe", "score": 6, "for": "webdev_maybe"}
         ]
     },
     {
         "question": "How are you",
         "for": "HowAreYou",
         "answer": [
-            {"answer": "McFlurry ty", "score": 10},
-            {"answer": "i dont know", "score": 10},
-            {"answer": "bruh", "score": 6}
+            {"answer": "McFlurry ty", "score": 10, "for": "howareyou_mf"},
+            {"answer": "i dont know", "score": 10, "for": "howareyou_idk"},
+            {"answer": "bruh", "score": 6, "for": "howareyou_bruh"}
         ]
     },
     {
         "question": "Do you like ice cream?",
         "for": "IceCream",
         "answer": [
-            {"answer": "yes", "score": 10},
-            {"answer": "no", "score": 1},
-            {"answer": "there is better", "score": -104}
+            {"answer": "yes", "score": 10, "for": "icecream_yes"},
+            {"answer": "no", "score": 1, "for": "icecream_no"},
+            {"answer": "there is better", "score": -104, "for": "icecream_better"}
         ]
     },
     {
         "question": "What drink do you like?",
         "for": "Drink",
         "answer": [
-            {"answer": "cola", "score": 8},
-            {"answer": "fanta", "score": 7},
-            {"answer": "sprite", "score": 6}
+            {"answer": "cola", "score": 8, "for": "drink_cola"},
+            {"answer": "fanta", "score": 7, "for": "drink_fanta"},
+            {"answer": "sprite", "score": 6, "for": "drink_sprite"}
         ]
     },
     {
         "question": "Which herb do you like?",
         "for": "HerbYouLike",
         "answer": [
-            {"answer": "agrostis", "score": 8},
-            {"answer": "cynodon", "score": 6},
-            {"answer": "coca", "score": 15}
+            {"answer": "agrostis", "score": 8, "for": "herb_agrostis"},
+            {"answer": "cynodon", "score": 6, "for": "herb_cynodon"},
+            {"answer": "coca", "score": 15, "for": "herb_coca"}
         ]
     },
     {
         "question": "Which game do you like?",
         "for": "GamesYouLike",
         "answer": [
-            {"answer": "minecraft", "score": 15},
-            {"answer": "call of duty", "score": 12},
-            {"answer": "cs:go", "score": 10},
-            {"answer": "roblox", "score": -104}
+            {"answer": "minecraft", "score": 15, "for": "game_minecraft"},
+            {"answer": "call of duty", "score": 12, "for": "game_cod"},
+            {"answer": "cs:go", "score": 10, "for": "game_csgo"},
+            {"answer": "roblox", "score": -104, "for": "game_roblox"}
         ]
     },
     {
         "question": "Do you like potato?",
         "for": "LikePotato",
         "answer": [
-            {"answer": "yes", "score": 15},
-            {"answer": "no", "score": 11},
-            {"answer": "maybe", "score": 5}
+            {"answer": "yes", "score": 15, "for": "potato_yes"},
+            {"answer": "no", "score": 11, "for": "potato_no"},
+            {"answer": "maybe", "score": 5, "for": "potato_maybe"}
         ]
     },
     {
         "question": "Which spice do you like?",
         "for": "SpicesYouLike",
         "answer": [
-            {"answer": "rosemary", "score": 10},
-            {"answer": "sage", "score": 12},
-            {"answer": "marij", "score": 5}
+            {"answer": "rosemary", "score": 10, "for": "spices_rosemary"},
+            {"answer": "sage", "score": 12, "for": "spices_sage"},
+            {"answer": "marij", "score": 5, "for": "spices_marij"}
         ]
     },
     {
         "question": "Kiwi is:",
         "for": "KiwiIs",
         "answer": [
-            {"answer": "a fruit", "score": 7},
-            {"answer": "a bird", "score": 7},
-            {"answer": "mmmmmh", "score": 10}
+            {"answer": "a fruit", "score": 7, "for": "kiwi_fruit"},
+            {"answer": "a bird", "score": 7, "for": "kiwi_bird"},
+            {"answer": "mmmmmh", "score": 10, "for": "kiwi_mmmh"}
         ]
     }
 ]

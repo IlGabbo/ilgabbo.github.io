@@ -16,7 +16,7 @@ export default function QuestionsBox() {
         const getQuestions = async () => {
             const data = await(
                 setContent(<LoadingWheel/>),
-                await fetch("/questions")
+                await fetch(url+"/questions")
             ).json()
             setItems(data)
         }
@@ -25,12 +25,12 @@ export default function QuestionsBox() {
                 <button onClick={() => {
                     let answers = []
                     document.querySelectorAll("input[type=radio]").forEach(input => {
-                        if (input.checked) {
-                            answers.push({ answer: input.parentNode.querySelector("label").textContent, for: input.parentNode.querySelector("label").getAttribute("for") })
+                        if (input.checked) {                            
+                            answers.push({ answer: input.parentNode.querySelector("label").textContent, for: input.parentNode.getAttribute("data-for") })
                         }
                     })
                     console.log(answers)
-                    fetch("/whichfood?answers=" + encodeURIComponent(JSON.stringify(answers)))
+                    fetch(url+"/whichfood?answers=" + encodeURIComponent(JSON.stringify(answers)))
                         .then(promise => { return promise.json() })
                         .then(data => {
                             console.log(data)
@@ -71,13 +71,13 @@ export default function QuestionsBox() {
                                     </div>
                                 {
                                     item.answer.map((answer, key) => (
-                                        <div key={key} className="answer">
-                                            <input type="radio" id={item.for} onChange={(e) => {
+                                        <div key={key} className="answer" data-for={item.for}>
+                                            <input type="radio" id={answer.for} onChange={(e) => {
                                                 const parent = e.target.parentNode.parentNode
                                                 parent.classList.add("hide-question")
                                                 parent.onanimationend = () => {parent.style.display = "none"}
                                             }}/>
-                                            <label htmlFor={item.for}>{answer.answer}</label>
+                                            <label htmlFor={answer.for}>{answer.answer}</label>
                                         </div>
                                     ))
                                 }
