@@ -1,0 +1,465 @@
+@font-face {
+    font-family: "Minecraft";
+    src: url(../font/minecraft/MinecraftRegular-Bmg3.otf);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Minecraft", sans-serif;
+}
+
+.blur {
+    background-position: center;
+    background-size: cover;
+    z-index: 1;
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    transition: all .2s;
+}
+
+.blur::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    backdrop-filter: blur(4px);
+}
+
+.width-414 {
+    width: 28.75%;
+    height: 95vh;
+    background-position: center;
+    background-size: cover;
+    background-repeat: repeat-x;
+    position: absolute;
+    overflow-x: hidden;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto auto;    
+    z-index: 130;
+    border-radius: 10px;  
+    overflow: hidden;  
+    -webkit-box-shadow: 0px 0px 31px 32px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 31px 32px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 31px 32px rgba(0,0,0,0.75);
+    transition: all .2s;
+}
+
+@keyframes bg-rotation {
+    from {
+        background-position: 0% 0%;
+    }    
+    to {
+        background-position: 100% 0%;
+    }
+}
+
+.title {
+    width: 90%;
+    height: 80px;
+    background-image: url(../images/title/title.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.buttons {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.content {
+    width: 100%;
+    text-align: center;
+}
+
+.game, .singleplayer {
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-size: cover;
+    display: none;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    background-color: transparent;
+}
+
+#reset {
+    background-color: rgba(255, 0, 0, 0.7);
+    margin-top: 15px;
+}
+
+#home {
+    background-color: rgba(0, 0, 255, 0.7);
+}
+
+.settings {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 99;
+}
+
+.icon {
+    width: 30px;
+    height: 30px;
+    background-size: cover;
+}
+
+.volume p {
+    color: #fff;
+}
+
+.settings-box {
+    width: 50%;
+    height: 300px;
+    border: 3px solid #000;
+    text-align: center;    
+    background-size: cover;
+    background-position: center;
+    -webkit-box-shadow: 0px 0px 14px 1px #000000; 
+    box-shadow: 0px 0px 14px 1px #000000;
+    position: relative;
+    transition: all .2s;
+}
+
+.settings-container {
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 95;
+}
+
+.volume-settings {
+    display: flex;
+    justify-content: center;
+}
+
+.gear {
+    background-image: url(../images/icon/gear.svg);
+}
+
+.volume-icon {
+    background-image: url(../images/icon/volume-mute.svg);
+    border: 2px solid #fff;
+    border-radius: 5px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+#volume-status {
+    color: #fff;
+    font-weight: 300;
+}
+
+.themes {
+    width: 100%;
+    height: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: 8%;
+}
+
+.overworld, .nether, .end {
+    width: 30%;
+    height: 100%;
+    color: #fff;
+    text-align: center;
+    border-radius: 7px;
+    border: 2px solid rgba(255, 255, 255, 0);
+    transition: all .2s;
+}
+
+.overworld:hover, .nether:hover, .end:hover {  
+    border: 2px solid #fff;
+    cursor: pointer;
+}
+
+.theme-icon {
+    width: 30px;
+    height: 30px;
+    border-radius: 5px;
+    background-size: cover;
+    margin: 0 auto;
+}
+
+.overworld-icon {
+    background-image: url(../images/icon/overworld.png);
+}
+
+.nether-icon {
+    background-image: url(../images/icon/nether.png);
+}
+
+.end-icon {
+    background-image: url(../images/icon/end.png);
+}
+
+.show-hide {
+    display: flex;
+}
+
+.status, .share-link {
+    width: 50%;
+    height: 100px;    
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    -webkit-box-shadow: 0px 0px 14px 1px #fff; 
+    box-shadow: 0px 0px 14px 1px #fff;
+    color: #fff;
+    z-index: 90;
+}
+
+.share-link {
+    display: flex;
+}
+
+.status {
+    display: none;
+}
+
+.status div:first-child {
+    width: 100%;
+    text-align: center;
+}
+
+.status div:last-child {
+    width: 50%;
+}
+
+.status div button {
+    width: 100%;
+    height: 30px;
+    background-color: rgba(0, 0, 255, 0.9);
+}
+
+.social {
+    width: 90%;
+    height: 40px;
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.social-icon {
+    width: 30px;
+    height: 30px;
+    background-size: cover;
+}
+
+.github {
+    background-image: url(../images/social/github.svg);
+}
+
+.discord {
+    background-image: url(../images/social/discord.svg);
+}
+
+.github:hover, .discord:hover {
+    cursor: pointer;
+}
+
+#sp {
+    display: none;
+}
+
+.difficulty {
+    position: absolute;
+    width: 50%;
+    height: 300px;
+    background-size: cover;
+    background-position: center;
+    -webkit-box-shadow: 0px 0px 16px 10px #000000; 
+    box-shadow: 0px 0px 16px 10px #000000;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;   
+    color: #fff;
+    transition: all .2s;
+}
+
+.difficulty-selector {
+    margin-top: 20px;
+    width: 60%;
+    background-image: url(../images/background/easy_button.png);
+}
+
+#coming-soon {
+    color: yellow;
+    display: none;
+    position: absolute;
+    bottom: 10px;
+}
+
+/* Pure tags */
+
+html, body {
+    height: -webkit-fill-available;
+    overflow: hidden;
+}
+
+body {
+    height: 100vh;
+}
+
+button {
+    width: 40%;
+    height: 40px;
+    margin: 0 auto;
+    margin-bottom: 10px;
+    font-size: 15px;
+    background-image: url(../images/background/button.png);
+    background-size: cover;
+    color: #fff;
+}
+
+button:hover {
+    border: 2px solid #fff;
+}
+
+h1 {
+    font-size: 48px;
+}
+
+th {
+    width: 60px;
+    height: 60px;
+    border: 2px solid #000;
+    color: #fff;
+    font-size: 45px;
+    text-align: center;
+}
+
+table {
+    background-color: rgba(0, 0, 0, 0.5);
+    -webkit-box-shadow: 1px 1px 9px 4px rgba(0,0,0,0.89); 
+    box-shadow: 1px 1px 9px 4px rgba(0,0,0,0.89);
+}
+
+.share-link-cnt {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    display: none;
+}
+
+.share-overlay {
+    display: block;
+    z-index: 1;
+}
+
+/* slider */
+input[type=range] {
+    width: 80%;
+    margin: 6.65px 0;
+    background-color: transparent;
+    -webkit-appearance: none;
+}
+
+input[type=range]:focus {
+    outline: none;
+}
+
+input[type=range]::-webkit-slider-runnable-track {
+    background-image: url(../images/background/respawn_anchor.png);
+    background-size: contain;
+    
+    width: 100%;
+    height: 12.7px;
+    cursor: pointer;
+}
+
+input[type=range]::-webkit-slider-thumb {
+    margin-top: -6.65px;
+    width: 13px;
+    height: 26px;
+    background-image: url(../images/background/obsidian.jpg);
+    background-size: cover;    
+    border: 1px solid #000;
+    cursor: pointer;
+    -webkit-appearance: none;
+}
+
+input[type=range]:focus::-webkit-slider-runnable-track {
+    background-image: url(../images/background/respawn_anchor.png);
+    background-size: contain;
+}
+
+input[type=range]::-moz-range-track {
+    background-image: url(../images/background/respawn_anchor.png);
+    background-size: contain;
+    
+    width: 100%;
+    height: 12.7px;
+    cursor: pointer;
+}
+
+input[type=range]::-moz-range-thumb {
+    width: 13px;
+    height: 26px;
+    background-image: url(../images/background/respawn_anchor.png);
+    background-size: cover;    
+    cursor: pointer;
+}
+
+input[type=range]::-ms-track {
+    background: transparent;
+    border-color: transparent;
+    border-width: 6.65px 0;
+    color: transparent;
+    width: 100%;
+    height: 12.7px;
+    cursor: pointer;
+}
+  
+  
+@media screen and (max-width: 1000px) {
+    .width-414 {
+        width: 414px;
+    }
+}
+
+@media screen and (max-width: 414px) {
+    .width-414 {
+        width: 100%;
+        height: 100vh;
+    }
+}

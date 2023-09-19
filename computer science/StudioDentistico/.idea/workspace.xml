@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="b61c445b-2d13-4f65-b817-8ae20f1c58e1" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../StudioDentistico.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/file.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gabbo/dentista/AddPatientController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gabbo/dentista/AddPatientController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gabbo/dentista/AppStartup.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gabbo/dentista/AppStartup.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gabbo/dentista/FileManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gabbo/dentista/FileManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gabbo/dentista/Login.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gabbo/dentista/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gabbo/dentista/MainController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/gabbo/dentista/AddPatient.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/gabbo/dentista/AddPatient.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/gabbo/dentista/MainWindow.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/gabbo/dentista/MainWindow.fxml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="FxmlFile" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../../.." />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/src/main/java/com/gabbo/dentista/AddPatientController.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/com/gabbo/dentista/AppStartup.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/com/gabbo/dentista/FileManager.java" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="Use Maven wrapper" />
+        <option name="useMavenConfig" value="true" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="2P0ggxXqwTQ8SQhsPgFIU6Mdj8f" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/manci/Desktop/one-dark-theme-5.7.4.zip&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.4413793&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\manci\Desktop\Git Projects\ilgabbo.github.io\redirect\Scuola\Informatica\StudioDentistico\src" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\manci\Desktop\Git\ilgabbo.github.io\redirect\Scuola\Informatica\StudioDentistico\src\main" />
+      <recent name="C:\Users\manci\Desktop\Git Projects\ilgabbo.github.io\redirect\Scuola\Informatica\StudioDentistico\src\main\java" />
+      <recent name="C:\Users\manci\Desktop\Git Projects\ilgabbo.github.io\redirect\Scuola\Informatica\StudioDentistico\src\main\java\com\gabbo\studiodentistico" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="AppStartup" type="Application" factoryName="Application" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.gabbo.dentista.AppStartup" />
+      <module name="StudioDentistico" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="b61c445b-2d13-4f65-b817-8ae20f1c58e1" name="Changes" comment="" />
+      <created>1682599531396</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1682599531396</updated>
+      <workItem from="1682599532725" duration="309000" />
+      <workItem from="1682599863760" duration="5929000" />
+      <workItem from="1682615687688" duration="922000" />
+      <workItem from="1682616636407" duration="74000" />
+      <workItem from="1682616742352" duration="2483000" />
+      <workItem from="1682619250317" duration="2088000" />
+      <workItem from="1682663903839" duration="3946000" />
+      <workItem from="1682673474896" duration="6046000" />
+      <workItem from="1683223824320" duration="2993000" />
+      <workItem from="1683278032111" duration="1566000" />
+      <workItem from="1683279671249" duration="4892000" />
+      <workItem from="1684568721552" duration="3761000" />
+      <workItem from="1684947874951" duration="1002000" />
+      <workItem from="1685126999168" duration="341000" />
+      <workItem from="1685169075049" duration="2540000" />
+      <workItem from="1685175348954" duration="2718000" />
+      <workItem from="1685700000735" duration="49000" />
+      <workItem from="1685700068956" duration="7000" />
+      <workItem from="1686491492363" duration="30000" />
+      <workItem from="1686680566600" duration="33000" />
+      <workItem from="1687337768449" duration="7989000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox maxHeight="500.0" maxWidth="800.0" minHeight="500.0" minWidth="800.0" prefHeight="500.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Pane prefHeight="504.0" prefWidth="856.0" style="-fx-background-color: linear-gradient(from 15% 15% to 100% 100%, #4b40ff, #97eeff);">
+         <children>
+            <Pane layoutX="30.0" layoutY="30.0" prefHeight="200.0" prefWidth="459.0" style="-fx-background-color: #fff;">
+               <children>
+                  <Button fx:id="withdrawal" layoutX="14.0" layoutY="100.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="99.0" style="-fx-background-color: linear-gradient(from 15% 15% to 80% 80%, #4b40ff, #97eeff);" text="Withdrawal" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font></Button>
+                  <Button fx:id="deposit" layoutX="131.0" layoutY="100.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="99.0" style="-fx-background-color: linear-gradient(from 15% 15% to 80% 80%, #4b40ff, #97eeff);" text="Deposit" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="movement_list" layoutX="247.0" layoutY="100.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="99.0" style="-fx-background-color: linear-gradient(from 15% 15% to 100% 100%, #4b40ff, #97eeff);" text="Movement list" textFill="WHITE">
+                  <font>
+                     <Font name="System Bold" size="12.0" />
+                  </font>
+                  </Button>
+                  <Pane layoutX="18.0" layoutY="14.0" prefHeight="49.0" prefWidth="327.0" style="-fx-background-color: #fff;">
+                     <children>
+                        <Label alignment="CENTER" prefHeight="49.0" prefWidth="91.0" text="Your balance:" textFill="#448fff">
+                           <font>
+                              <Font name="System Bold" size="13.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="balance" layoutX="100.0" lineSpacing="1.0" prefHeight="49.0" prefWidth="227.0" style="-fx-border-style: 2px solid red;" text="€150" textFill="#008eff">
+                           <font>
+                              <Font name="System Bold" size="25.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Pane>
+                  <Button fx:id="exit" layoutX="377.0" layoutY="26.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="68.0" style="-fx-background-color: red;" text="Exit" textFill="WHITE">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Button>
+               </children>
+            </Pane>
+            <Pane id="actions_box" layoutX="30.0" layoutY="250.0" prefHeight="91.0" prefWidth="459.0" style="-fx-background-color: #fff;">
+               <children>
+                  <Button fx:id="action" layoutX="285.0" layoutY="28.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="82.0" style="-fx-background-color: linear-gradient(from 15% 15% to 100% 100%, #4b40ff, #97eeff);" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Button>
+                  <TextField fx:id="value_import" layoutX="23.0" layoutY="28.0" prefHeight="36.0" prefWidth="206.0" promptText="Type an import" />
+                  <Label fx:id="action_status" layoutX="23.0" layoutY="64.0" prefHeight="28.0" prefWidth="206.0">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <VBox fx:id="list_box" layoutX="520.0" layoutY="152.0" prefHeight="310.0" prefWidth="168.0" />
+            <ScrollPane fx:id="movement_box" layoutX="543.0" layoutY="30.0" prefHeight="312.0" prefWidth="200.0" />
+         </children>
+      </Pane>
+   </children>
+</VBox>
