@@ -17,7 +17,8 @@ module.exports = {
   theme: {
     extend: {
       colors: default_colors,
-      backgroundColor: default_colors
+      backgroundColor: default_colors,
+      borderColor: default_colors
     }
   },
   plugins: [],

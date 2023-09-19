@@ -1,0 +1,31 @@
+@import "../../styles/color";
+
+.SpinnerMain,
+.SpinnerBack {
+    width: 23px;
+    height: 23px;
+    border-radius: 100%;
+}
+
+.SpinnerMain,
+.SpinnerBack {
+  border-top: 3px solid transparent;
+  border-bottom: 3px solid $color-text-primary;
+  border-left: 3px solid transparent;
+  border-right: 3px solid transparent;
+  animation: bar 1s ease infinite;
+}
+
+.SpinnerBack {
+  border-style: dotted;
+  animation: bar 1s linear infinite;
+}
+
+@keyframes bar {
+  from {
+    rotate: 0deg;
+  }
+  to {
+    rotate: 360deg;
+  }
+}

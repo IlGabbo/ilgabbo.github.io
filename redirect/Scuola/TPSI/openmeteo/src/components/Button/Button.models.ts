@@ -1,5 +1,9 @@
+export type ButtonType = "confirm" | "cancel"
+
 export interface ButtonProps {
+  type: ButtonType
   label: string
   onLoading?: boolean
-  onClose?: () => void
+  onAbort?: () => void
+  onConfirm?: () => void
 }

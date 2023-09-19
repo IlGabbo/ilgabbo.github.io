@@ -5,4 +5,6 @@ export interface AlertProps {
    * Buttons displayed are 'Yes', 'No'
    */
   showButtons?: boolean
+  onClose?: () => void
+  onConfirm?: () => void
 }
