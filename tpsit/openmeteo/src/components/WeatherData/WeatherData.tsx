@@ -1,5 +1,6 @@
 import { WeatherProps } from "./WeatherData.models";
 import { useEffect, useRef } from "react";
+import LineCrt from "../LineChart/LineCrt";
 
 export default function WeatherData(
   {
@@ -7,6 +8,18 @@ export default function WeatherData(
   } : WeatherProps
 ) {
   const weatherRef = useRef<HTMLDivElement>(null)
+
+  const setChart = () => {
+    const data: any[] = []
+    weatherdata?.hourly.precipitation_probability.slice(0, 24).map((value, key) => {
+      data.push({
+        hour: `${key}:00`,
+        precipitation_prob: `${value}%`,
+        prob: value
+      })
+    })
+    return data
+  }
 
   useEffect(() => {
     if (weatherdata) {
@@ -21,8 +34,12 @@ export default function WeatherData(
       <div className='w-4/5 h-4/5 bg-color_secondary rounded-lg flex items-center justify-center'>
         <div className='w-[90%] h-[90%]'>
           <h2 className='text-color_text_primary font-semibold text-2xl'>Weather stats</h2>
-          <div className="Graphic w-full h-2/5 mt-3"></div>
-          <div className='w-full min-h-[64px] overflow-x-auto flex'>
+          <div className="Graphic w-full h-2/5 mt-3">
+            <LineCrt data={
+                setChart()
+            } />
+          </div>
+          <div className='w-full min-h-[64px] mt-10 overflow-x-auto flex'>
             {
               weatherdata.hourly.precipitation_probability.slice(0, 24).map((value, key) => {
                 return (

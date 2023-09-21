@@ -15,6 +15,7 @@ export default function HomePage(
   const [alt, showAlert] = useState<boolean>()
   const [message, setMessage] = useState<string>('')
   const [coords, setCoords] = useState<LatLngExpression>([51.505, -0.09])
+  const [firstCoords, setFirstCoords] = useState<LatLngExpression>([0, 0])
   const [marker, setMarker] = useState<boolean>()
   const [loading, setLoading] = useState<boolean>(false)
   const inputLatRef = useRef<HTMLInputElement>(null),
@@ -42,14 +43,12 @@ export default function HomePage(
       if (inputLonRef.current) {
         inputLonRef.current.value = lon.toString()
       }
-      return [lat, lon]
     }
-    return [0, 0]
   }
 
   useEffect(() => {
     setLocation()
-  }, [])
+    }, [])
 
   const Markers = () => {
     const map = useMapEvents({
@@ -76,7 +75,7 @@ export default function HomePage(
 
   const Map = () => {
     return (
-      <MapContainer className="w-1/2 h-52 mt-4 mb-4 overflow-hidden rounded-lg outline-none z-10" zoom={13} center={coords}>
+      <MapContainer className="w-1/2 h-52 mt-4 mb-4 overflow-hidden rounded-lg outline-none z-10" zoom={13} center={firstCoords}>
         <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"/>
         <Markers />
       </MapContainer>
@@ -88,7 +87,13 @@ export default function HomePage(
       <h3 className="text-center text-color_text_primary font-bold text-2xl">Weather forecast</h3>
       <p className="text-center text-color_text_primary">Enter coordinates to get weather info</p>
       {
-        <Map />
+        firstCoords ? (<Map />) : 
+        (
+          <MapContainer className="w-1/2 h-52 mt-4 mb-4 overflow-hidden rounded-lg outline-none z-10" zoom={13} center={firstCoords}>
+            <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"/>
+            <Markers />
+          </MapContainer>
+        )
       }
       <div className="w-1/2 h-10 flex items-center justify-evenly">
         <Button type="cancel" label="Reset" onAbort={() => {
