@@ -13,10 +13,10 @@ public class Main {
 
         do {
             System.out.println("""
-            Type an option:
-                [0] Add new student
+            Enter an option:
+                [0] Add a new student
                 [1] Print class
-                [2] Search student by name and lastname
+                [2] Search student by first and last name
                 [3] Exit
                     """);
 
@@ -33,9 +33,9 @@ public class Main {
                         break;
                     case 2:
                         String name, lastName;
-                        System.out.println("Type the name");
+                        System.out.println("Enter name");
                         name = kb.next();
-                        System.out.println("Type the last name");
+                        System.out.println("Enter last name");
                         lastName = kb.next();
 
                         if (studentFound(name, lastName)) {
@@ -54,11 +54,11 @@ public class Main {
         int age;
         String name, lastName;
 
-        System.out.println("Type the name");
+        System.out.println("Enter name");
         name = kb.next();
-        System.out.println("Type last name");
+        System.out.println("Enter last name");
         lastName = kb.next();
-        System.out.println("Type age");
+        System.out.println("Enter age");
         age = kb.nextInt();
 
         students.add(new Student(name, lastName, age));
