@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercise A</title>
+</head>
+<body>
+  <form action="index.php" method="get">
+    <div>
+      <label for="locality">Locality</label>
+      <input type="text" id="locality" name="locality" required>
+    </div>
+    <div>
+      <label for="date">Date</label>
+      <input type="text" id="date" name="date" required>
+    </div>
+    <div>
+      <label for="hour">Hour</label>
+      <input type="text" id="hour" name="hour" required>
+    </div>
+    <div>
+      <label for="">Revelation type</label>
+      <div>
+        <input type="radio" id="revelation_type_ofc" name="revelation_type" required>
+        <label for="revelation_type_ofc">OFC</label>
+        <input type="radio" id="revelation_type_amb" name="revelation_type" required>
+        <label for="revelation_type_amb">AMB</label>
+        <input type="radio" id="revelation_type_dra" name="revelation_type" required>
+        <label for="revelation_type_dra">DRA</label>
+      </div>
+    </div>
+    <div>
+      <label for="humidity">Humidity</label>
+      <select name="humidity" id="humidity" required>
+        <option value="related">Related</option>
+        <option value="absolute">Absolute</option>
+      </select>
+    </div>
+    <div>
+      <label for="current_climate">Current climate</label>
+      <select name="current_climate" id="current_climate" required>
+        <option value="relative">Rain</option>
+        <option value="absolute">Clear</option>
+        <option value="windy">Windy</option>
+        <option value="wet">Wet</option>
+        <option value="mist">Mist</option>
+      </select>
+    </div>
+    <div>
+      <label for="altitude">Altitude</label>
+      <input type="number" name="altitude" id="altitude" required>
+    </div>
+    <button type="submit">Send</button>
+  </form>
+</body>
+</html>
