@@ -58,7 +58,7 @@ public class Train extends Thread {
 
         try {
           Thread.sleep(5000);
-          System.out.println("[LOG] Train is crossed");
+          System.out.println("[LOG] Train crossed");
         } catch (InterruptedException exc) {
           /*
           * Ignoring
