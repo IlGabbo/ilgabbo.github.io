@@ -4,13 +4,22 @@
     $euro = floor($total);
     $cents = $total - $euro;
 
+    $two_euros = $euro / 2;
+    $one_euro = 0;
     switch ($euro) {
-      case $euro > 2:
-        $two_euros = $euro / 2;
+      case $euro >= 2:
+        if ($euro %2 !== 0) {
+          $one_euro = 1;
+        }
         break;
+      
+      case $euro == 1:
+        $two_euros = 0;
+        $one_euro = 1;
     }
     if (isset($two_euros)) {
-      echo $two_euros." monete da 2";
+      $p = $one_euro > 1 || $one_euro == 0 ? 'e' : 'a';
+      echo floor($two_euros)." monete da 2, ".$one_euro." monet".$p." da 1<br/>";
     }
     
     return $total;
@@ -33,7 +42,6 @@
     <input type="submit" name="send" id="send" value="Invia">
   </form>
   <?php
-    $value = isset($_POST["value"]);
     if (isset($_POST["value"])) {
       echo "€".calc($_POST["value"]);
     }
