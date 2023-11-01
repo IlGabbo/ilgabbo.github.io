@@ -30,9 +30,9 @@ public class Train extends Thread {
   @Override
   public void run() {
     int randomWaiting = 0;
+    Random rand = new Random();
     TrainCross train = new TrainCross(this);
     train.start();
-    Random rand = new Random();
 
     while (true) {
       randomWaiting = rand.nextInt(10);
@@ -50,19 +50,8 @@ public class Train extends Thread {
           try {
             Thread.sleep(1000);
           } catch (InterruptedException exc) {
-            /*
-            * Ignoring
-            * */
-          }
-        }
 
-        try {
-          Thread.sleep(5000);
-          System.out.println("[LOG] Train crossed");
-        } catch (InterruptedException exc) {
-          /*
-          * Ignoring
-          * */
+          }
         }
       }
     }

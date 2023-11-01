@@ -23,29 +23,27 @@ public class TrainCross extends Thread {
         /*
          * Print status
          * */
-        System.out.println("Train is arriving");
-        System.out.println("The barrier is down");
-        System.out.println("Light red");
-        System.out.println();
+        System.out.println("Train is arriving\n" +
+                "Barrier down\n" +
+                "Red light\n");
         Thread.sleep(1000);
 
         /*
         * Set crossing status to crossing
         * */
         train.setCrossing(Status.crossing);
-        System.out.println("Train is crossing");
-        System.out.println("The barrier is down");
-        System.out.println("Light red");
-        System.out.println();
+        System.out.println("Train is crossing\n" +
+                "Barrier down\n" +
+                "Red light\n");
 
+        Thread.sleep(5000);
         /*
         * Set crossing status to waiting
         * */
         train.setCrossing(Status.waiting);
-        System.out.println("Crossing is waiting for a train");
-        System.out.println("Barrier up");
-        System.out.println("Light green");
-        System.out.println();
+        System.out.println("Train has crossed\n" +
+                "Barrier up\n" +
+                "Green light\n");
       } catch (InterruptedException exception) {
         System.out.println("Nothing to do");
       }

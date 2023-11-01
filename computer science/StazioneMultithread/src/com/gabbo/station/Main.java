@@ -6,9 +6,9 @@ public class Main {
   public static void main(String[] args) {
     Scanner kb = new Scanner(System.in);
     Train train = new Train();
-    System.out.println("Press 'p' to exit");
-
     train.start();
+
+    System.out.println("Press 'p' to exit");
     Thread main = new Thread(new Runnable() {
       @Override
       public void run() {
