@@ -26,7 +26,7 @@ public class TrainCross extends Thread {
         System.out.println("Train is arriving\n" +
                 "Barrier down\n" +
                 "Red light\n");
-        Thread.sleep(1000);
+        Thread.sleep(3000);
 
         /*
         * Set crossing status to crossing

@@ -31,12 +31,12 @@ public class Train extends Thread {
   public void run() {
     int randomWaiting = 0;
     Random rand = new Random();
-    TrainCross train = new TrainCross(this);
-    train.start();
+    TrainCross traincross = new TrainCross(this);
+    traincross.start();
 
     while (true) {
       randomWaiting = rand.nextInt(10);
-      System.out.println("[LOG] Random Wait " + randomWaiting);
+      System.out.println("[LOG] Random $> " + randomWaiting);
       try {
         Thread.sleep(1000);
       } catch (InterruptedException exc) {
@@ -46,11 +46,14 @@ public class Train extends Thread {
       if (randomWaiting == 0) {
         status = Status.arriving;
 
+        /*
+        * To interrupt number generation
+        * */
         while (status != Status.waiting) {
           try {
             Thread.sleep(1000);
           } catch (InterruptedException exc) {
-
+            /* N/A */
           }
         }
       }
