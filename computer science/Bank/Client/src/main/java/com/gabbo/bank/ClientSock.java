@@ -13,7 +13,7 @@ public class ClientSock {
 
     public static boolean init() {
         try {
-            s2 = new Socket("192.168.1.96", 4444);
+            s2 = new Socket("192.168.30.10", 4444);
             return true;
         } catch (Exception e) {
             // e.printStackTrace();

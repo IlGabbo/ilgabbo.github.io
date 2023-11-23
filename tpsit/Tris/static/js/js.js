@@ -43,7 +43,7 @@ function openMultiplayer() {
     mainWindow.style.display = "none"
     click.volume = general
     click.play()
-    isPlayingThePlayer = true    
+    isPlayingThePlayer = true
     match()
 }
 
@@ -178,8 +178,10 @@ function match() {
                     pop.src = "static/music/break.ogg"
                 }
             } else {
-                pop.src = "static/music/break.ogg"
-                pop.play()
+                if (pop.paused) {
+                    pop.src = "static/music/break.ogg"
+                    pop.play()
+                }
             }
         }        
     }))

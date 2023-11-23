@@ -44,7 +44,7 @@ public class SQL {
             conn = DriverManager.getConnection("jdbc:sqlite:C:\\Bank Service\\User\\" + db + ".db");
             createTable();
             status = true;
-        } catch (Exception e) {
+        } catch (Exception e) {  // blu arancione viola giallo marrone giallo
             errorlog("error.log", e.getMessage()+"\n");
             print("Error on connectDb (SQL) function");
             status = false;

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dataSource name="denti">
-  <database-model serializer="dbm" dbms="SQLITE" family-id="SQLITE" format-version="4.38">
+  <database-model serializer="dbm" dbms="SQLITE" family-id="SQLITE" format-version="4.48">
     <root id="1">
       <ServerVersion>3.40.1</ServerVersion>
     </root>
@@ -1443,23 +1443,23 @@
       <Position>5</Position>
     </column>
     <column id="511" parent="505" name="type">
-      <DataType>TEXT|0s</DataType>
+      <DasType>TEXT|0s</DasType>
       <Position>1</Position>
     </column>
     <column id="512" parent="505" name="name">
-      <DataType>TEXT|0s</DataType>
+      <DasType>TEXT|0s</DasType>
       <Position>2</Position>
     </column>
     <column id="513" parent="505" name="tbl_name">
-      <DataType>TEXT|0s</DataType>
+      <DasType>TEXT|0s</DasType>
       <Position>3</Position>
     </column>
     <column id="514" parent="505" name="rootpage">
-      <DataType>INT|0s</DataType>
+      <DasType>INT|0s</DasType>
       <Position>4</Position>
     </column>
     <column id="515" parent="505" name="sql">
-      <DataType>TEXT|0s</DataType>
+      <DasType>TEXT|0s</DasType>
       <Position>5</Position>
     </column>
   </database-model>
