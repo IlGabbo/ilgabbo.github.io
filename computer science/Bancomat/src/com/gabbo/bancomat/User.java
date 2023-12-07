@@ -15,7 +15,8 @@ public class User extends Thread {
   public void run() {
     while (true) {
       try {
-        Thread.sleep(4000);
+        int r = new Random().nextInt(4)*1000;
+        Thread.sleep(r);
       } catch (InterruptedException e) {
         throw new RuntimeException(e);
       }
@@ -24,14 +25,14 @@ public class User extends Thread {
       int amount = new Random().nextInt(1000);
       if (action == 0) {
         atm.deposit(amount);
-        System.out.println("User " + id + ", Deposited €" + amount);
+        System.out.println("User with id " + id + " deposited €" + amount);
       }
       if (action == 1) {
         ATMStatus status = atm.withdraw(amount);
         if (status == ATMStatus.AMOUNT_EXCEEDS_AVAILABILITY) {
-          System.out.println("User " + id + ", Amount Exceeds Availability");
+          System.out.println("User with id " + id + ", Amount Exceeds Availability");
         } else {
-          System.out.println("User " + id + ": Success, withdrawn €" + amount);
+          System.out.println("User with id " + id + ": Success, withdrawn €" + amount);
         }
       }
     }

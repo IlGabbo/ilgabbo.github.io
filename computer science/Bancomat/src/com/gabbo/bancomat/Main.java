@@ -9,9 +9,9 @@ public class Main {
     ArrayList<User> users = new ArrayList<>();
 
     final int amountOfUsers = new Random().nextInt(10);
-    for (int id = 0; id < amountOfUsers; id++) {
-      users.add(new User(atm, id));
-      users.get(id).start();
+    for (int userId = 0; userId < amountOfUsers; userId++) {
+      users.add(new User(atm, userId));
+      users.get(userId).start();
     }
   }
 }
