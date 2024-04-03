@@ -1,8 +1,11 @@
 <?php
+  // Controllo se l'utente è loggato, altrimenti rimando al login.
   session_start();
   if (!isset($_SESSION["logged"])) {
     header("Location: ../../index.html");
   }
+
+  // Qui l'esercizio chiede di vedere le ultime tre recensioni di ogni località
 
   $destinations = [
     "france",
@@ -18,6 +21,7 @@
   for ($i = 0; $i < count($destinations); $i++) {
     echo $destinations[$i] . ":<br/>";
 
+    // for loop al contrario per visualizzare dall'ultimo elemento dell'array salvato nella sessione
     for ($j = count($_SESSION[$destinations[$i] . "_reviews"]); $j >= count($_SESSION[$destinations[$i] . "_reviews"])-3; $j--) {
       if ($j >= 0) {
         $user = isset($_SESSION[$destinations[$i] . "_reviews"][0][0]) ? $_SESSION[$destinations[$i] . "_reviews"][0][0] : null;

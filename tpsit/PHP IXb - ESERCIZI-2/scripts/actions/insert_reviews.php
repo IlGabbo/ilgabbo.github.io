@@ -1,5 +1,9 @@
 <?php
   session_start();
+
+  /**
+   * Verifico che l'utente sia loggato
+   */
   if (!isset($_SESSION['logged'])) {
     header("Location: ../../index.html");
     exit;
@@ -37,6 +41,9 @@
     <button type="submit">Invia</button>
   </form>
   <?php
+    /**
+    * Verifico se una query string è presente nell'url (non un modo ottimale ma vb)
+    */
     if (isset($_SERVER["QUERY_STRING"][0])) {
       echo "<p>Recensione inviata con successo</p>";
     }

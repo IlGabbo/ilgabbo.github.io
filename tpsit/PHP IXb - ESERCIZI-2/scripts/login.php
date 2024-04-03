@@ -18,13 +18,26 @@
     exit();
   }
 
+  /**
+   * session_start() crea/riprende una sessione
+   */
   session_start();
+
+  /**
+   * Questa sintassi permette di creare una variabile di sessione
+   */
   $_SESSION["logged"] = true;
   $_SESSION["username"] = $username;
   
+  /**
+   * Inizializzo gli array di sessione utilizzati per salvare le recensioni (vedi l'esercizio per capire meglio)
+   */
   $_SESSION["france_reviews"] = array();
   $_SESSION["spain_reviews"] = array();
   $_SESSION["italy_reviews"] = array();
 
+  /**
+   * Qui sposto l'utente sulla pagina index.php se loggato (vedi cosa è un header se vuoi)
+   */
   header("Location: ./home/index.php");
 ?>
