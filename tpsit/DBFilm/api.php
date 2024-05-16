@@ -1,7 +1,7 @@
 <?php
   require './functions.php';
 
-  if ($_SERVER['REQUEST_METHOD'] === 'get') {
+  if ($_SERVER['REQUEST_METHOD'] === 'GET') {
     if ($_SERVER['PATH_INFO'] === '/movies') {
       $movies = getMovies(isset($_GET['title']) ? $_GET['title'] : null);
       if ($movies === null) {
@@ -72,7 +72,6 @@
     echo json_encode([
       'status' => 405,
       'message' => 'Method Not Allowed',
-      'payload' => []
     ]);
   }
 ?>
