@@ -38,4 +38,16 @@
     $result = $conn->query($sql)->fetch_all(MYSQLI_ASSOC);
     return $result;
   }
+
+  function getPeople($name) {
+    $conn = db();
+    $sql = "SELECT * FROM person";
+
+    if (isset($name) || $name !== null) {
+      $sql .= " WHERE name LIKE '%$name%'";
+    }
+
+    $result = $conn->query($sql)->fetch_all(MYSQLI_ASSOC);
+    return $result;
+  }
 ?>

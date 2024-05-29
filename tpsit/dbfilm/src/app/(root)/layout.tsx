@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import "./index.css";
+import "../index.css";
 import '@fontsource/roboto/300.css';
 import '@fontsource/roboto/400.css';
 import '@fontsource/roboto/500.css';
@@ -22,8 +22,7 @@ export default function RootLayout({
         <main className="wrapper">
           <div className="topbar">
             <Button variant='contained' href="/movies">movies</Button>
-            <Button variant='contained' href="/actors">actors</Button>
-            <Button variant='contained' href="/directors">directors</Button>
+            <Button variant="contained" href="/people">People</Button>
           </div>
           <div className="content-centered">
             {children}

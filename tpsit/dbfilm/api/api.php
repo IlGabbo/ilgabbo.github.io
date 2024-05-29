@@ -66,6 +66,27 @@
       ]);
       return;
     }
+    if ($_SERVER['PATH_INFO'] === '/people') {
+      $people = getPeople(isset($_GET['name']) ? $_GET['name'] : null);
+      if ($people === null) {
+        http_response_code(500);
+        header('Content-Type: application-json');
+        echo json_encode([
+          'status' => 500,
+          'message' => 'Internal server error',
+          'payload' => []
+        ]);
+        return;
+      }
+      http_response_code(200);
+      header('Content-Type: application-json');
+      echo json_encode([
+        'status' => 200,
+        'message' => 'OK',
+        'payload' => $people
+      ]);
+      return;
+    }
   } else {
     http_response_code(405);
     header('Content-Type: application-json');
